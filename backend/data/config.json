@@ -1,0 +1,18 @@
+{
+  "llm": {
+    "enabled": false,
+    "base_url": "https://api.openai.com/v1",
+    "api_key": "",
+    "model": "gpt-4o-mini",
+    "timeout": 30
+  },
+  "browser": {
+    "headless": true,
+    "browser": "chromium",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "default_timeout": 10000
+  }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI 自动化测试平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部工具栏 -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚡</span>
+      <span class="title">UI Automation Platform</span>
+      <span class="subtitle">自然语言驱动 · Playwright</span>
+    </div>
+    <div class="actions">
+      <button id="btn-new-suite" class="btn primary">+ 新建用例集</button>
+      <button id="btn-run-all" class="btn">▶ 运行选中</button>
+      <button id="btn-config" class="btn ghost">⚙ 配置</button>
+      <button id="btn-help" class="btn ghost">？ 关键词</button>
+    </div>
+  </header>
+
+  <!-- 三栏布局 -->
+  <main class="layout">
+    <!-- 左：用例集列表 -->
+    <aside class="sidebar">
+      <h3 class="section-title">用例集分组</h3>
+      <div id="suite-list" class="suite-list"></div>
+    </aside>
+
+    <!-- 中：用例集详情 -->
+    <section class="content">
+      <div id="suite-detail" class="suite-detail">
+        <div class="empty-tip">请选择左侧用例集，或点击「+ 新建用例集」开始</div>
+      </div>
+    </section>
+
+    <!-- 右：执行面板 -->
+    <aside class="exec-panel">
+      <div class="panel-head">
+        <h3 class="section-title">执行面板</h3>
+        <span id="run-status" class="badge idle">空闲</span>
+      </div>
+
+      <!-- 浏览器实时画面 -->
+      <div class="live-view">
+        <div class="live-head">
+          <span class="live-title">🖥 浏览器画面</span>
+          <span class="live-meta" id="live-meta">未开始</span>
+        </div>
+        <div class="live-box">
+          <img id="live-img" alt="">
+          <div class="live-placeholder" id="live-placeholder">
+            <div class="ring"></div>
+            <div class="tip">执行后将实时显示浏览器画面</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary" id="run-summary"></div>
+      <div class="logs" id="run-logs"></div>
+    </aside>
+  </main>
+
+  <!-- ============ 配置弹窗 ============ -->
+  <div class="modal hidden" id="modal-config">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>平台配置</h3>
+        <span class="close" data-close="modal-config">×</span>
+      </div>
+      <div class="modal-body">
+        <h4>LLM 配置（OpenAI 兼容）</h4>
+        <label>启用LLM兜底
+          <input type="checkbox" id="cfg-llm-enabled">
+        </label>
+        <label>Base URL
+          <input type="text" id="cfg-llm-baseurl" placeholder="https://api.openai.com/v1">
+        </label>
+        <label>API Key
+          <input type="password" id="cfg-llm-apikey" placeholder="sk-...">
+        </label>
+        <label>Model
+          <input type="text" id="cfg-llm-model" placeholder="gpt-4o-mini">
+        </label>
+        <h4>浏览器配置</h4>
+        <label>无头模式
+          <input type="checkbox" id="cfg-headless">
+        </label>
+        <label>浏览器
+          <select id="cfg-browser">
+            <option value="chromium">Chromium</option>
+            <option value="firefox">Firefox</option>
+            <option value="webkit">WebKit</option>
+          </select>
+        </label>
+        <label>默认超时(ms)
+          <input type="number" id="cfg-timeout" value="10000">
+        </label>
+      </div>
+      <div class="modal-foot">
+        <button class="btn primary" id="btn-save-config">保存配置</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 关键词帮助弹窗 ============ -->
+  <div class="modal hidden" id="modal-help">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>支持的自然语言关键词</h3>
+        <span class="close" data-close="modal-help">×</span>
+      </div>
+      <div class="modal-body">
+        <pre id="help-text" class="help-text">加载中...</pre>
+        <hr>
+        <h4>快速测试单步解析</h4>
+        <div class="row">
+          <input type="text" id="parse-input" placeholder="例如：在 搜索框 输入 Playwright">
+          <button class="btn" id="btn-test-parse">解析</button>
+        </div>
+        <pre id="parse-result" class="help-text"></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 用例集编辑弹窗 ============ -->
+  <div class="modal hidden" id="modal-suite">
+    <div class="modal-card large">
+      <div class="modal-head">
+        <h3 id="suite-modal-title">编辑用例集</h3>
+        <span class="close" data-close="modal-suite">×</span>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="suite-id">
+        <label>名称
+          <input type="text" id="suite-name" placeholder="如：登录模块用例集">
+        </label>
+        <label>描述
+          <input type="text" id="suite-desc" placeholder="简要描述">
+        </label>
+        <label>Base URL（可选，每个用例自动打开）
+          <input type="text" id="suite-baseurl" placeholder="https://www.baidu.com">
+        </label>
+        <label>标签（逗号分隔）
+          <input type="text" id="suite-tags" placeholder="login,smoke">
+        </label>
+
+        <div class="case-editor">
+          <div class="row between">
+            <h4>用例列表</h4>
+            <button class="btn small" id="btn-add-case">+ 添加用例</button>
+          </div>
+          <div id="case-list-edit"></div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn primary" id="btn-save-suite">保存</button>
+        <button class="btn ghost" data-close="modal-suite">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 用例模板（克隆使用） -->
+  <template id="tpl-case">
+    <div class="case-block" data-case>
+      <div class="case-head">
+        <input type="text" data-case-name placeholder="用例名称" class="case-name-input">
+        <button class="btn-icon" data-case-del title="删除用例">🗑</button>
+      </div>
+      <input type="text" data-case-pre placeholder="前置条件（可选）">
+      <div class="step-table">
+        <div class="step-head">
+          <span>#</span><span>执行步骤（自然语言）</span><span>预期结果</span><span></span>
+        </div>
+        <div data-steps></div>
+        <button class="btn small" data-step-add>+ 添加步骤</button>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-step">
+    <div class="step-row" data-step>
+      <span class="step-idx" data-step-idx>1</span>
+      <input type="text" data-step-desc placeholder="如：在 搜索框 输入 Playwright">
+      <input type="text" data-step-exp placeholder="预期结果">
+      <button class="btn-icon" data-step-del>×</button>
+    </div>
+  </template>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

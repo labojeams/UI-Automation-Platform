@@ -1,0 +1,52 @@
+[
+  {
+    "id": "suite_demo_baidu",
+    "name": "百度搜索示例",
+    "description": "验证百度搜索关键词跳转结果页，演示自然语言用例",
+    "base_url": "https://www.baidu.com",
+    "tags": ["demo", "search"],
+    "cases": [
+      {
+        "id": "case_baidu_search",
+        "name": "搜索 Playwright 关键词",
+        "precondition": "已打开百度首页",
+        "steps": [
+          { "id": "s1", "description": "在 搜索框 输入 Playwright", "expected": "搜索框显示 Playwright", "actual": "", "status": "pending" },
+          { "id": "s2", "description": "点击 css=#su", "expected": "跳转搜索结果页", "actual": "", "status": "pending" },
+          { "id": "s3", "description": "等待 2 秒", "expected": "结果页完成加载", "actual": "", "status": "pending" },
+          { "id": "s4", "description": "验证 页面 包含 Playwright", "expected": "结果页正文包含 Playwright", "actual": "", "status": "pending" },
+          { "id": "s5", "description": "截图 baidu_result", "expected": "已保存结果页截图", "actual": "", "status": "pending" }
+        ]
+      },
+      {
+        "id": "case_baidu_title",
+        "name": "首页标题校验",
+        "precondition": "",
+        "steps": [
+          { "id": "s1", "description": "验证 标题 包含 百度", "expected": "title 含「百度」", "actual": "", "status": "pending" },
+          { "id": "s2", "description": "验证 css=#kw 可见", "expected": "搜索框可见", "actual": "", "status": "pending" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "suite_demo_form",
+    "name": "表单操作示例",
+    "description": "演示输入、选择、勾选、按键等动作",
+    "base_url": "https://httpbin.org/forms/post",
+    "tags": ["demo", "form"],
+    "cases": [
+      {
+        "id": "case_form_submit",
+        "name": "填写并提交订单表单",
+        "precondition": "页面加载完成",
+        "steps": [
+          { "id": "s1", "description": "在 Customer name 输入 Alice", "expected": "姓名输入成功", "actual": "", "status": "pending" },
+          { "id": "s2", "description": "在 Telephone 输入 13800001111", "expected": "电话输入成功", "actual": "", "status": "pending" },
+          { "id": "s3", "description": "勾选 bacon", "expected": "已勾选 bacon", "actual": "", "status": "pending" },
+          { "id": "s4", "description": "截图 form_filled", "expected": "截图保存成功", "actual": "", "status": "pending" }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "id": "run_1777358984_e5b805",
+  "scope": "case",
+  "target_name": "搜索 Playwright 关键词",
+  "status": "error",
+  "logs": [
+    {
+      "ts": 1777358998247,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1777358998392,
+      "level": "error",
+      "msg": "'gbk' codec can't encode character '\\U0001f3a5' in position 7: illegal multibyte sequence"
+    }
+  ],
+  "summary": null,
+  "started_at": 1777358984463,
+  "finished_at": 1777358998392
+}

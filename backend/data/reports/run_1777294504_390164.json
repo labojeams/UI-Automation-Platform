@@ -1,0 +1,236 @@
+{
+  "id": "run_1777294504_390164",
+  "scope": "case",
+  "target_name": "搜索 Playwright 关键词",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1777294505815,
+      "level": "info",
+      "msg": "-- 用例：搜索 Playwright 关键词 --"
+    },
+    {
+      "ts": 1777294509643,
+      "level": "info",
+      "msg": "前置：已打开 https://www.baidu.com"
+    },
+    {
+      "ts": 1777294509644,
+      "level": "info",
+      "msg": "前置条件：已打开百度首页"
+    },
+    {
+      "ts": 1777294509644,
+      "level": "info",
+      "msg": "步骤 1: 在 搜索框 输入 Playwright | 预期: 搜索框显示 Playwright"
+    },
+    {
+      "ts": 1777294509644,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '搜索框', 'value': 'Playwright'}"
+    },
+    {
+      "ts": 1777294520049,
+      "level": "error",
+      "msg": "  -> fill 执行失败: Locator.fill: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"搜索框\")\n"
+    },
+    {
+      "ts": 1777294520128,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索Playwright关键词_step1_20260427_205520.png"
+    },
+    {
+      "ts": 1777294520129,
+      "level": "info",
+      "msg": "步骤 2: 点击 百度一下 | 预期: 跳转搜索结果页"
+    },
+    {
+      "ts": 1777294520129,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '百度一下', 'value': None}"
+    },
+    {
+      "ts": 1777294520221,
+      "level": "info",
+      "msg": "  -> 已点击 百度一下"
+    },
+    {
+      "ts": 1777294520222,
+      "level": "info",
+      "msg": "步骤 3: 等待 2 秒 | 预期: 结果页完成加载"
+    },
+    {
+      "ts": 1777294520222,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait', 'target': None, 'value': 2.0}"
+    },
+    {
+      "ts": 1777294522223,
+      "level": "info",
+      "msg": "  -> 等待 2.0 秒"
+    },
+    {
+      "ts": 1777294522223,
+      "level": "info",
+      "msg": "步骤 4: 验证 页面 包含 Playwright | 预期: 结果页包含 Playwright 文案"
+    },
+    {
+      "ts": 1777294522223,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'assert_url', 'target': None, 'value': 'Playwright'}"
+    },
+    {
+      "ts": 1777294522223,
+      "level": "error",
+      "msg": "  -> ✗ URL「https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E6%9B%9D%E8%83%A1%E5%BD%A6%E6%96%8C%E5%A5%B3%E5%8F%8B%E6%98%93%E6%A2%A6%E7%8E%B2%E6%95%B4%E5%AE%B9&fenlei=256&rsv_pq=0xe470e4c100015750&rsv_t=2daaea%2FJOaVyGScS7E5Oh1kKcj4OSvm96ozB0RAsxkuy5ucCJmt5D9WszcJ5&rqlang=en&rsv_enter=1&rsv_dl=ikrec_click_iph_igh_notyyc_gsnd&rsv_btype=i&rsv_sug9=eb_1」不包含「Playwright」"
+    },
+    {
+      "ts": 1777294522277,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索Playwright关键词_step4_20260427_205522.png"
+    },
+    {
+      "ts": 1777294522277,
+      "level": "info",
+      "msg": "步骤 5: 截图 baidu_result | 预期: 已保存结果页截图"
+    },
+    {
+      "ts": 1777294522277,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'screenshot', 'target': None, 'value': 'baidu_result'}"
+    },
+    {
+      "ts": 1777294522330,
+      "level": "info",
+      "msg": "  -> 截图已保存: baidu_result_20260427_205522.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_baidu_search",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 17449,
+    "case": {
+      "id": "case_baidu_search",
+      "name": "搜索 Playwright 关键词",
+      "precondition": "已打开百度首页",
+      "steps": [
+        {
+          "id": "s1",
+          "description": "在 搜索框 输入 Playwright",
+          "expected": "搜索框显示 Playwright",
+          "actual": "fill 执行失败: Locator.fill: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"搜索框\")\n",
+          "status": "fail"
+        },
+        {
+          "id": "s2",
+          "description": "点击 百度一下",
+          "expected": "跳转搜索结果页",
+          "actual": "已点击 百度一下",
+          "status": "pass"
+        },
+        {
+          "id": "s3",
+          "description": "等待 2 秒",
+          "expected": "结果页完成加载",
+          "actual": "等待 2.0 秒",
+          "status": "pass"
+        },
+        {
+          "id": "s4",
+          "description": "验证 页面 包含 Playwright",
+          "expected": "结果页包含 Playwright 文案",
+          "actual": "✗ URL「https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E6%9B%9D%E8%83%A1%E5%BD%A6%E6%96%8C%E5%A5%B3%E5%8F%8B%E6%98%93%E6%A2%A6%E7%8E%B2%E6%95%B4%E5%AE%B9&fenlei=256&rsv_pq=0xe470e4c100015750&rsv_t=2daaea%2FJOaVyGScS7E5Oh1kKcj4OSvm96ozB0RAsxkuy5ucCJmt5D9WszcJ5&rqlang=en&rsv_enter=1&rsv_dl=ikrec_click_iph_igh_notyyc_gsnd&rsv_btype=i&rsv_sug9=eb_1」不包含「Playwright」",
+          "status": "fail"
+        },
+        {
+          "id": "s5",
+          "description": "截图 baidu_result",
+          "expected": "已保存结果页截图",
+          "actual": "截图已保存: baidu_result_20260427_205522.png",
+          "status": "pass"
+        }
+      ],
+      "status": "fail"
+    },
+    "suite": {
+      "id": "suite_demo_baidu",
+      "name": "百度搜索示例",
+      "base_url": "https://www.baidu.com",
+      "description": "验证百度搜索关键词跳转结果页，演示自然语言用例",
+      "tags": [
+        "demo",
+        "search"
+      ],
+      "cases": [
+        {
+          "id": "case_baidu_search",
+          "name": "搜索 Playwright 关键词",
+          "precondition": "已打开百度首页",
+          "steps": [
+            {
+              "id": "s1",
+              "description": "在 搜索框 输入 Playwright",
+              "expected": "搜索框显示 Playwright",
+              "actual": "fill 执行失败: Locator.fill: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"搜索框\")\n",
+              "status": "fail"
+            },
+            {
+              "id": "s2",
+              "description": "点击 百度一下",
+              "expected": "跳转搜索结果页",
+              "actual": "已点击 百度一下",
+              "status": "pass"
+            },
+            {
+              "id": "s3",
+              "description": "等待 2 秒",
+              "expected": "结果页完成加载",
+              "actual": "等待 2.0 秒",
+              "status": "pass"
+            },
+            {
+              "id": "s4",
+              "description": "验证 页面 包含 Playwright",
+              "expected": "结果页包含 Playwright 文案",
+              "actual": "✗ URL「https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E6%9B%9D%E8%83%A1%E5%BD%A6%E6%96%8C%E5%A5%B3%E5%8F%8B%E6%98%93%E6%A2%A6%E7%8E%B2%E6%95%B4%E5%AE%B9&fenlei=256&rsv_pq=0xe470e4c100015750&rsv_t=2daaea%2FJOaVyGScS7E5Oh1kKcj4OSvm96ozB0RAsxkuy5ucCJmt5D9WszcJ5&rqlang=en&rsv_enter=1&rsv_dl=ikrec_click_iph_igh_notyyc_gsnd&rsv_btype=i&rsv_sug9=eb_1」不包含「Playwright」",
+              "status": "fail"
+            },
+            {
+              "id": "s5",
+              "description": "截图 baidu_result",
+              "expected": "已保存结果页截图",
+              "actual": "截图已保存: baidu_result_20260427_205522.png",
+              "status": "pass"
+            }
+          ],
+          "status": "fail"
+        },
+        {
+          "id": "case_baidu_title",
+          "name": "首页标题校验",
+          "precondition": "",
+          "steps": [
+            {
+              "id": "s1",
+              "description": "验证 标题 包含 百度",
+              "expected": "title 含「百度」",
+              "actual": "",
+              "status": "pending"
+            },
+            {
+              "id": "s2",
+              "description": "验证 百度一下 可见",
+              "expected": "按钮可见",
+              "actual": "",
+              "status": "pending"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1777294504955,
+  "finished_at": 1777294522404
+}

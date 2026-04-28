@@ -1,0 +1,241 @@
+{
+  "id": "run_1777295666_47ff43",
+  "scope": "case",
+  "target_name": "搜索 Playwright 关键词",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1777295667470,
+      "level": "info",
+      "msg": "-- 用例：搜索 Playwright 关键词 --"
+    },
+    {
+      "ts": 1777295669877,
+      "level": "info",
+      "msg": "前置：已打开 https://www.baidu.com"
+    },
+    {
+      "ts": 1777295669877,
+      "level": "info",
+      "msg": "前置条件：已打开百度首页"
+    },
+    {
+      "ts": 1777295669877,
+      "level": "info",
+      "msg": "步骤 1: 在 搜索框 输入 Playwright | 预期: 搜索框显示 Playwright"
+    },
+    {
+      "ts": 1777295669877,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '搜索框', 'value': 'Playwright'}"
+    },
+    {
+      "ts": 1777295680080,
+      "level": "error",
+      "msg": "  -> fill 执行失败: Locator.fill: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"input[type=search], input#kw, input[name=wd], input[name=q], input[name=query], input[placeholder*=搜索], input[aria-label*=搜索]\").first\n    - locator resolved to <input id=\"kw\" value=\"\" name=\"wd\" class=\"s_ipt\" maxlength=\"255\" autocomplete=\"off\" placeholder=\"云南一中学教师在校内坠楼\"/>\n    - fill(\"Playwright\")\n  - attempting fill action\n    2 × waiting for element to be visible, enabled and editable\n      - element is not visible\n    - retrying fill action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and editable\n      - element is not visible\n    - retrying fill action\n      - waiting 100ms\n    17 × waiting for element to be visible, enabled and editable\n       - element is not visible\n     - retrying fill action\n       - waiting 500ms\n"
+    },
+    {
+      "ts": 1777295680183,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索Playwright关键词_step1_20260427_211440.png"
+    },
+    {
+      "ts": 1777295680183,
+      "level": "info",
+      "msg": "步骤 2: 点击 css=#su | 预期: 跳转搜索结果页"
+    },
+    {
+      "ts": 1777295680183,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'css=#su', 'value': None}"
+    },
+    {
+      "ts": 1777295690189,
+      "level": "error",
+      "msg": "  -> click 执行失败: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"#su\")\n    - locator resolved to <input id=\"su\" value=\"百度一下\" type=\"submit\" class=\"bg s_btn\"/>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    19 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "ts": 1777295690258,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索Playwright关键词_step2_20260427_211450.png"
+    },
+    {
+      "ts": 1777295690259,
+      "level": "info",
+      "msg": "步骤 3: 等待 2 秒 | 预期: 结果页完成加载"
+    },
+    {
+      "ts": 1777295690259,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait', 'target': None, 'value': 2.0}"
+    },
+    {
+      "ts": 1777295692259,
+      "level": "info",
+      "msg": "  -> 等待 2.0 秒"
+    },
+    {
+      "ts": 1777295692259,
+      "level": "info",
+      "msg": "步骤 4: 验证 页面 包含 Playwright | 预期: 结果页正文包含 Playwright"
+    },
+    {
+      "ts": 1777295692259,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'assert_page_text', 'target': None, 'value': 'Playwright'}"
+    },
+    {
+      "ts": 1777295692267,
+      "level": "error",
+      "msg": "  -> ✗ 页面未找到「Playwright」"
+    },
+    {
+      "ts": 1777295692342,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索Playwright关键词_step4_20260427_211452.png"
+    },
+    {
+      "ts": 1777295692342,
+      "level": "info",
+      "msg": "步骤 5: 截图 baidu_result | 预期: 已保存结果页截图"
+    },
+    {
+      "ts": 1777295692343,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'screenshot', 'target': None, 'value': 'baidu_result'}"
+    },
+    {
+      "ts": 1777295692414,
+      "level": "info",
+      "msg": "  -> 截图已保存: baidu_result_20260427_211452.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_baidu_search",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 26018,
+    "case": {
+      "id": "case_baidu_search",
+      "name": "搜索 Playwright 关键词",
+      "precondition": "已打开百度首页",
+      "steps": [
+        {
+          "id": "s1",
+          "description": "在 搜索框 输入 Playwright",
+          "expected": "搜索框显示 Playwright",
+          "actual": "fill 执行失败: Locator.fill: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"input[type=search], input#kw, input[name=wd], input[name=q], input[name=query], input[placeholder*=搜索], input[aria-label*=搜索]\").first\n    - locator resolved to <input id=\"kw\" value=\"\" name=\"wd\" class=\"s_ipt\" maxlength=\"255\" autocomplete=\"off\" placeholder=\"云南一中学教师在校内坠楼\"/>\n    - fill(\"Playwright\")\n  - attempting fill action\n    2 × waiting for element to be visible, enabled and editable\n      - element is not visible\n    - retrying fill action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and editable\n      - element is not visible\n    - retrying fill action\n      - waiting 100ms\n    17 × waiting for element to be visible, enabled and editable\n       - element is not visible\n     - retrying fill action\n       - waiting 500ms\n",
+          "status": "fail"
+        },
+        {
+          "id": "s2",
+          "description": "点击 css=#su",
+          "expected": "跳转搜索结果页",
+          "actual": "click 执行失败: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"#su\")\n    - locator resolved to <input id=\"su\" value=\"百度一下\" type=\"submit\" class=\"bg s_btn\"/>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    19 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n",
+          "status": "fail"
+        },
+        {
+          "id": "s3",
+          "description": "等待 2 秒",
+          "expected": "结果页完成加载",
+          "actual": "等待 2.0 秒",
+          "status": "pass"
+        },
+        {
+          "id": "s4",
+          "description": "验证 页面 包含 Playwright",
+          "expected": "结果页正文包含 Playwright",
+          "actual": "✗ 页面未找到「Playwright」",
+          "status": "fail"
+        },
+        {
+          "id": "s5",
+          "description": "截图 baidu_result",
+          "expected": "已保存结果页截图",
+          "actual": "截图已保存: baidu_result_20260427_211452.png",
+          "status": "pass"
+        }
+      ],
+      "status": "fail"
+    },
+    "suite": {
+      "id": "suite_demo_baidu",
+      "name": "百度搜索示例",
+      "base_url": "https://www.baidu.com",
+      "description": "验证百度搜索关键词跳转结果页，演示自然语言用例",
+      "tags": [
+        "demo",
+        "search"
+      ],
+      "cases": [
+        {
+          "id": "case_baidu_search",
+          "name": "搜索 Playwright 关键词",
+          "precondition": "已打开百度首页",
+          "steps": [
+            {
+              "id": "s1",
+              "description": "在 搜索框 输入 Playwright",
+              "expected": "搜索框显示 Playwright",
+              "actual": "fill 执行失败: Locator.fill: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"input[type=search], input#kw, input[name=wd], input[name=q], input[name=query], input[placeholder*=搜索], input[aria-label*=搜索]\").first\n    - locator resolved to <input id=\"kw\" value=\"\" name=\"wd\" class=\"s_ipt\" maxlength=\"255\" autocomplete=\"off\" placeholder=\"云南一中学教师在校内坠楼\"/>\n    - fill(\"Playwright\")\n  - attempting fill action\n    2 × waiting for element to be visible, enabled and editable\n      - element is not visible\n    - retrying fill action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and editable\n      - element is not visible\n    - retrying fill action\n      - waiting 100ms\n    17 × waiting for element to be visible, enabled and editable\n       - element is not visible\n     - retrying fill action\n       - waiting 500ms\n",
+              "status": "fail"
+            },
+            {
+              "id": "s2",
+              "description": "点击 css=#su",
+              "expected": "跳转搜索结果页",
+              "actual": "click 执行失败: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"#su\")\n    - locator resolved to <input id=\"su\" value=\"百度一下\" type=\"submit\" class=\"bg s_btn\"/>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    19 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n",
+              "status": "fail"
+            },
+            {
+              "id": "s3",
+              "description": "等待 2 秒",
+              "expected": "结果页完成加载",
+              "actual": "等待 2.0 秒",
+              "status": "pass"
+            },
+            {
+              "id": "s4",
+              "description": "验证 页面 包含 Playwright",
+              "expected": "结果页正文包含 Playwright",
+              "actual": "✗ 页面未找到「Playwright」",
+              "status": "fail"
+            },
+            {
+              "id": "s5",
+              "description": "截图 baidu_result",
+              "expected": "已保存结果页截图",
+              "actual": "截图已保存: baidu_result_20260427_211452.png",
+              "status": "pass"
+            }
+          ],
+          "status": "fail"
+        },
+        {
+          "id": "case_baidu_title",
+          "name": "首页标题校验",
+          "precondition": "",
+          "steps": [
+            {
+              "id": "s1",
+              "description": "验证 标题 包含 百度",
+              "expected": "title 含「百度」",
+              "actual": "",
+              "status": "pending"
+            },
+            {
+              "id": "s2",
+              "description": "验证 css=#kw 可见",
+              "expected": "搜索框可见",
+              "actual": "",
+              "status": "pending"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1777295666387,
+  "finished_at": 1777295692513
+}
