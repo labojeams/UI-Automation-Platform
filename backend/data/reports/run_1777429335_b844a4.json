@@ -1,0 +1,188 @@
+{
+  "id": "run_1777429335_b844a4",
+  "scope": "case",
+  "target_name": "下订单",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1777429344384,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1777429344675,
+      "level": "info",
+      "msg": "-- 用例：下订单 --"
+    },
+    {
+      "ts": 1777429347644,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1777429347720,
+      "level": "info",
+      "msg": "步骤 1: 点击”密码登录“按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1777429347723,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1777429377876,
+      "level": "error",
+      "msg": "  -> click 执行失败: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"密码登录\")\n"
+    },
+    {
+      "ts": 1777429377975,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_下订单_step1_20260429_102257.png"
+    },
+    {
+      "ts": 1777429380008,
+      "level": "info",
+      "msg": "步骤 2: 点击”账号“输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1777429380009,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1777429440408,
+      "level": "error",
+      "msg": "  -> 输入失败: Locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"账号\")\n"
+    },
+    {
+      "ts": 1777429440496,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_下订单_step2_20260429_102400.png"
+    },
+    {
+      "ts": 1777429442538,
+      "level": "info",
+      "msg": "步骤 3: 点击”密码“输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1777429442538,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1777429503121,
+      "level": "error",
+      "msg": "  -> 输入失败: Locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"密码\")\n"
+    },
+    {
+      "ts": 1777429503211,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_下订单_step3_20260429_102503.png"
+    },
+    {
+      "ts": 1777429505253,
+      "level": "info",
+      "msg": "步骤 4: 点击”登录“按钮 | 预期: 登录成功，页面有”工作台“菜单"
+    },
+    {
+      "ts": 1777429505253,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1777429505369,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    }
+  ],
+  "summary": {
+    "case_id": "case_a0a14fe076",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 171267,
+    "case": {
+      "id": "case_a0a14fe076",
+      "name": "下订单",
+      "precondition": "",
+      "steps": [
+        {
+          "id": "step_58dda6ba55",
+          "description": "点击”密码登录“按钮",
+          "expected": "点击成功",
+          "actual": "click 执行失败: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"密码登录\")\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_3e4cf7a83f",
+          "description": "点击”账号“输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "输入失败: Locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"账号\")\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_3042951642",
+          "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "输入失败: Locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"密码\")\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_9faf6a0446",
+          "description": "点击”登录“按钮",
+          "expected": "登录成功，页面有”工作台“菜单",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        }
+      ],
+      "status": "fail"
+    },
+    "suite": {
+      "id": "suite_89974e902c",
+      "name": "积木云装下订单",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "积木云装下订单",
+      "tags": [],
+      "cases": [
+        {
+          "id": "case_a0a14fe076",
+          "name": "下订单",
+          "precondition": "",
+          "steps": [
+            {
+              "id": "step_58dda6ba55",
+              "description": "点击”密码登录“按钮",
+              "expected": "点击成功",
+              "actual": "click 执行失败: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"密码登录\")\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_3e4cf7a83f",
+              "description": "点击”账号“输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "输入失败: Locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"账号\")\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_3042951642",
+              "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "输入失败: Locator.evaluate: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"密码\")\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_9faf6a0446",
+              "description": "点击”登录“按钮",
+              "expected": "登录成功，页面有”工作台“菜单",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            }
+          ],
+          "status": "fail"
+        }
+      ]
+    }
+  },
+  "started_at": 1777429335896,
+  "finished_at": 1777429507549
+}

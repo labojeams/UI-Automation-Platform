@@ -23,6 +23,7 @@ DEFAULT_BROWSER_CONFIG = {
     "browser": "chromium",   # chromium / firefox / webkit
     "viewport": {"width": 1280, "height": 800},
     "default_timeout": 10000,
+    "step_interval": 2,      # 每步执行后休眠秒数（0 = 不休眠）
 }
 
 os.makedirs(DATA_DIR, exist_ok=True)

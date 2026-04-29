@@ -407,6 +407,7 @@ async function loadConfig() {
   $("#cfg-headless").checked = !!cfg.browser.headless;
   $("#cfg-browser").value = cfg.browser.browser || "chromium";
   $("#cfg-timeout").value = cfg.browser.default_timeout || 10000;
+  $("#cfg-step-interval").value = cfg.browser.step_interval != null ? cfg.browser.step_interval : 2;
 }
 
 async function saveConfig() {
@@ -420,6 +421,7 @@ async function saveConfig() {
       headless: $("#cfg-headless").checked,
       browser: $("#cfg-browser").value,
       default_timeout: Number($("#cfg-timeout").value) || 10000,
+      step_interval: Number($("#cfg-step-interval").value) || 0,
     },
   };
   const apiKey = $("#cfg-llm-apikey").value.trim();

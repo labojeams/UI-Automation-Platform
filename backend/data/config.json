@@ -1,9 +1,9 @@
 {
   "llm": {
     "enabled": false,
-    "base_url": "https://api.openai.com/v1",
-    "api_key": "",
-    "model": "gpt-4o-mini",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "api_key": "sk-31da0b11e191453f89df42db6af69544",
+    "model": "qwen3.6-plus",
     "timeout": 30
   },
   "browser": {
@@ -13,6 +13,7 @@
       "width": 1280,
       "height": 800
     },
-    "default_timeout": 10000
+    "default_timeout": 10000,
+    "step_interval": 2
   }
 }

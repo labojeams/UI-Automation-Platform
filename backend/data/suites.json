@@ -123,43 +123,45 @@
   },
   {
     "id": "suite_89974e902c",
-    "name": "积木云装下订单",
-    "description": "积木云装下订单",
+    "name": "下单（整装）",
+    "description": "登录->下单",
     "base_url": "https://jmyz-test.jdtest.net/main",
-    "tags": [],
+    "tags": [
+      "login"
+    ],
     "cases": [
       {
         "id": "case_a0a14fe076",
-        "name": "下订单",
+        "name": "登录积木云装",
         "precondition": "",
         "steps": [
           {
             "id": "step_58dda6ba55",
             "description": "点击”密码登录“按钮",
             "expected": "点击成功",
-            "actual": "无法解析该步骤（关键词与LLM均未识别）",
-            "status": "fail"
+            "actual": "",
+            "status": "pending"
           },
           {
             "id": "step_3e4cf7a83f",
             "description": "点击”账号“输入框，输入8040094",
             "expected": "输入成功",
-            "actual": "无法解析该步骤（关键词与LLM均未识别）",
-            "status": "fail"
+            "actual": "",
+            "status": "pending"
           },
           {
             "id": "step_3042951642",
             "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
             "expected": "输入成功",
-            "actual": "无法解析该步骤（关键词与LLM均未识别）",
-            "status": "fail"
+            "actual": "",
+            "status": "pending"
           },
           {
             "id": "step_9faf6a0446",
             "description": "点击”登录“按钮",
             "expected": "登录成功，页面有”工作台“菜单",
-            "actual": "无法解析该步骤（关键词与LLM均未识别）",
-            "status": "fail"
+            "actual": "",
+            "status": "pending"
           }
         ]
       }

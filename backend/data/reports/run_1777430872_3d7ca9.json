@@ -1,0 +1,188 @@
+{
+  "id": "run_1777430872_3d7ca9",
+  "scope": "case",
+  "target_name": "下订单",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1777430873897,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1777430873979,
+      "level": "info",
+      "msg": "-- 用例：下订单 --"
+    },
+    {
+      "ts": 1777430875923,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1777430876012,
+      "level": "info",
+      "msg": "步骤 1: 点击”密码登录“按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1777430876012,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1777430876131,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「密码登录 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1777430876222,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_下订单_step1_20260429_104756.png"
+    },
+    {
+      "ts": 1777430878271,
+      "level": "info",
+      "msg": "步骤 2: 点击”账号“输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1777430878272,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1777430878371,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1777430878561,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_下订单_step2_20260429_104758.png"
+    },
+    {
+      "ts": 1777430880651,
+      "level": "info",
+      "msg": "步骤 3: 点击”密码“输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1777430880652,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1777430880717,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1777430880804,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_下订单_step3_20260429_104800.png"
+    },
+    {
+      "ts": 1777430882849,
+      "level": "info",
+      "msg": "步骤 4: 点击”登录“按钮 | 预期: 登录成功，页面有”工作台“菜单"
+    },
+    {
+      "ts": 1777430882849,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1777430882984,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    }
+  ],
+  "summary": {
+    "case_id": "case_a0a14fe076",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 12573,
+    "case": {
+      "id": "case_a0a14fe076",
+      "name": "下订单",
+      "precondition": "",
+      "steps": [
+        {
+          "id": "step_58dda6ba55",
+          "description": "点击”密码登录“按钮",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「密码登录 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_3e4cf7a83f",
+          "description": "点击”账号“输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_3042951642",
+          "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_9faf6a0446",
+          "description": "点击”登录“按钮",
+          "expected": "登录成功，页面有”工作台“菜单",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        }
+      ],
+      "status": "fail"
+    },
+    "suite": {
+      "id": "suite_89974e902c",
+      "name": "积木云装下订单",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "积木云装下订单",
+      "tags": [],
+      "cases": [
+        {
+          "id": "case_a0a14fe076",
+          "name": "下订单",
+          "precondition": "",
+          "steps": [
+            {
+              "id": "step_58dda6ba55",
+              "description": "点击”密码登录“按钮",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「密码登录 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_3e4cf7a83f",
+              "description": "点击”账号“输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_3042951642",
+              "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_9faf6a0446",
+              "description": "点击”登录“按钮",
+              "expected": "登录成功，页面有”工作台“菜单",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            }
+          ],
+          "status": "fail"
+        }
+      ]
+    }
+  },
+  "started_at": 1777430872509,
+  "finished_at": 1777430885148
+}

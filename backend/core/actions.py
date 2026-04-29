@@ -88,6 +88,37 @@ class ActionExecutor:
     def _do_fill(self, a):
         el = self.locator.smart_find(a["target"])
         value = "" if a.get("value") is None else str(a.get("value"))
+        # 0) 校正：若命中元素不是 input/textarea/select/contenteditable，
+        #    尝试定位它内部 / 紧邻其后的真实输入控件
+        try:
+            info = el.evaluate(
+                "e => ({ tag: (e && e.tagName ? e.tagName.toLowerCase() : ''), "
+                "editable: !!(e && e.isContentEditable) })"
+            ) or {}
+            tag = (info.get("tag") or "").lower()
+            editable = bool(info.get("editable"))
+        except Exception:
+            tag, editable = "", False
+        if tag and tag not in ("input", "textarea", "select") and not editable:
+            replaced = False
+            # 优先在该元素内部找
+            try:
+                inner = el.locator("input, textarea, select")
+                if inner.count() > 0:
+                    el = inner.first
+                    replaced = True
+            except Exception:
+                pass
+            if not replaced:
+                # 再找它后面紧邻的输入控件
+                try:
+                    after = el.locator(
+                        "xpath=following::*[self::input or self::textarea or self::select][1]"
+                    )
+                    if after.count() > 0:
+                        el = after.first
+                except Exception:
+                    pass
         # 1) 标准 fill（最快，且会触发完整事件链）
         try:
             el.fill(value, timeout=self.timeout)

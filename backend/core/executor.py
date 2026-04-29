@@ -201,6 +201,16 @@ class SuiteExecutor:
                 case_pass = False
                 self._screenshot_on_fail(page, case, idx)
 
+            # 每条步骤执行完后固定休眠（默认 2s），便于观察画面 + 等待页面响应
+            sleep_secs = float(self.browser_cfg.get("step_interval", 2))
+            if sleep_secs > 0:
+                # 用 page.wait_for_timeout 让 Playwright 自身的事件循环也能继续推进
+                try:
+                    page.wait_for_timeout(int(sleep_secs * 1000))
+                except Exception:
+                    time.sleep(sleep_secs)
+                self._tick_frame()
+
         self._tick_frame()
         case["status"] = "pass" if case_pass else "fail"
         return case_pass
