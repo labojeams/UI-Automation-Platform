@@ -14,7 +14,7 @@ import threading
 import traceback
 from typing import Dict, Any, Callable, Optional
 
-from .actions import ActionExecutor
+from .actions import ActionExecutor, PageHolder
 from .parser import parse_step
 from .llm_parser import LLMParser
 
@@ -36,7 +36,7 @@ class SuiteExecutor:
         self.llm = LLMParser(llm_cfg or {})
         self.log = logger or (lambda lvl, msg: print(f"[{lvl}] {msg}"))
         self.frame_cb = frame_callback
-        self._current_page = None
+        self._current_holder = None
         self._frame_stop = None
         self._frame_thread = None
 
@@ -66,9 +66,12 @@ class SuiteExecutor:
                     )
                     page = context.new_page()
                     page.set_default_timeout(self.browser_cfg.get("default_timeout", 10000))
-                    self._start_frame_loop(page)
+                    holder = PageHolder(page)
+                    # 自动跟随 popup / target=_blank 打开的新页面
+                    context.on("page", lambda np: holder.add(np))
+                    self._start_frame_loop(holder)
                     try:
-                        ok = self._run_case(page, case, suite)
+                        ok = self._run_case(holder, case, suite)
                         total += 1
                         if ok:
                             passed += 1
@@ -99,9 +102,11 @@ class SuiteExecutor:
                 )
                 page = context.new_page()
                 page.set_default_timeout(self.browser_cfg.get("default_timeout", 10000))
-                self._start_frame_loop(page)
+                holder = PageHolder(page)
+                context.on("page", lambda np: holder.add(np))
+                self._start_frame_loop(holder)
                 try:
-                    ok = self._run_case(page, case, suite)
+                    ok = self._run_case(holder, case, suite)
                 finally:
                     self._stop_frame_loop()
                     context.close()
@@ -118,25 +123,27 @@ class SuiteExecutor:
         }
 
     # ---------------- 画面推送（主动截图） ----------------
-    def _start_frame_loop(self, page):
+    def _start_frame_loop(self, holder):
         """截图循环不能在另一个线程直接调用 Playwright sync API（线程不安全）。
-        策略：在主线程 run 循环的各关键节点（每步执行前后）主动截一张；
-        这里仅记录 current_page 以便 _tick_frame 使用。"""
+        策略：在主线程 run 循环的各关键节点（每步执行前后）主动截一张。
+        持有 PageHolder 而非 page，确保切换/新建窗口时画面也能跟随到 active。"""
         if not self.frame_cb:
             return
-        self._current_page = page
+        self._current_holder = holder
         self.log("info", "🎥 浏览器画面嵌入已启用（每步截帧推送）")
         self._tick_frame()  # 推送初始画面
 
     def _stop_frame_loop(self):
-        self._current_page = None
+        self._current_holder = None
 
     def _tick_frame(self):
         """抓一帧并回传。在主线程调用（安全）。"""
-        if not self.frame_cb or not self._current_page:
+        holder = getattr(self, "_current_holder", None)
+        if not self.frame_cb or not holder:
             return
         try:
-            png = self._current_page.screenshot(type="jpeg", quality=60, full_page=False)
+            page = holder.active
+            png = page.screenshot(type="jpeg", quality=60, full_page=False)
             b64 = base64.b64encode(png).decode("ascii")
             self.frame_cb(b64, {
                 "width": 1280,
@@ -148,9 +155,9 @@ class SuiteExecutor:
             self.log("debug", f"截帧失败（可忽略）：{e}")
 
     # ---------------- 内部 ----------------
-    def _run_case(self, page, case: Dict[str, Any], suite: Dict[str, Any]) -> bool:
+    def _run_case(self, holder, case: Dict[str, Any], suite: Dict[str, Any]) -> bool:
         self.log("info", f"-- 用例：{case.get('name')} --")
-        executor = ActionExecutor(page, default_timeout=self.browser_cfg.get("default_timeout", 10000))
+        executor = ActionExecutor(holder, default_timeout=self.browser_cfg.get("default_timeout", 10000))
 
         base_url = suite.get("base_url")
         if base_url:
@@ -182,7 +189,7 @@ class SuiteExecutor:
                 step["actual"] = "无法解析该步骤（关键词与LLM均未识别）"
                 self.log("error", step["actual"])
                 case_pass = False
-                self._screenshot_on_fail(page, case, idx)
+                self._screenshot_on_fail(holder.active, case, idx)
                 self._tick_frame()
                 continue
 
@@ -199,14 +206,14 @@ class SuiteExecutor:
             self.log("info" if ok else "error", f"  -> {msg}")
             if not ok:
                 case_pass = False
-                self._screenshot_on_fail(page, case, idx)
+                self._screenshot_on_fail(holder.active, case, idx)
 
             # 每条步骤执行完后固定休眠（默认 2s），便于观察画面 + 等待页面响应
             sleep_secs = float(self.browser_cfg.get("step_interval", 2))
             if sleep_secs > 0:
                 # 用 page.wait_for_timeout 让 Playwright 自身的事件循环也能继续推进
                 try:
-                    page.wait_for_timeout(int(sleep_secs * 1000))
+                    holder.active.wait_for_timeout(int(sleep_secs * 1000))
                 except Exception:
                     time.sleep(sleep_secs)
                 self._tick_frame()

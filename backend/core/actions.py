@@ -4,19 +4,107 @@
 """
 import os
 import time
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, Tuple, Union
 
 from .locators import ElementLocator
 from ..config import SCREENSHOTS_DIR
 
 
+class PageHolder:
+    """共享的"当前页面"持有者。
+
+    用例执行期间页面可能因点击产生新窗口/新标签 (popup)；
+    通过 context.on("page") 钩子把新 page 推到这里，ActionExecutor 通过
+    holder.active 读取最新页面，做到自动跟随。
+
+    pages: 所有 page 列表（按打开顺序，0 为主页面）
+    active_index: 当前活动 page 的索引；动作执行时优先用此 page
+    """
+
+    def __init__(self, main_page):
+        self.pages = [main_page]
+        self.active_index = 0
+
+    @property
+    def active(self):
+        # 自动跳过已关闭页面
+        if not self.pages:
+            return None
+        # 容错：active_index 越界则回退
+        if self.active_index >= len(self.pages):
+            self.active_index = len(self.pages) - 1
+        page = self.pages[self.active_index]
+        if getattr(page, "is_closed", lambda: False)():
+            # 当前页已关闭，退到上一个未关闭页
+            for i in range(len(self.pages) - 1, -1, -1):
+                if not self.pages[i].is_closed():
+                    self.active_index = i
+                    return self.pages[i]
+            return None
+        return page
+
+    @property
+    def main(self):
+        return self.pages[0] if self.pages else None
+
+    def add(self, page):
+        """新窗口打开时由钩子调用：加入 list 并切换为活动。"""
+        if page in self.pages:
+            return
+        self.pages.append(page)
+        self.active_index = len(self.pages) - 1
+
+    def switch_to_latest(self):
+        """切到最近打开的未关闭 page。"""
+        for i in range(len(self.pages) - 1, -1, -1):
+            if not self.pages[i].is_closed():
+                self.active_index = i
+                return self.pages[i]
+        return None
+
+    def switch_to_main(self):
+        """切回主页面。"""
+        if self.pages and not self.pages[0].is_closed():
+            self.active_index = 0
+            return self.pages[0]
+        return None
+
+    def close_active(self):
+        """关闭当前 page 并自动切回前一个。"""
+        if len(self.pages) <= 1:
+            return None
+        cur = self.active
+        if cur and not cur.is_closed():
+            try:
+                cur.close()
+            except Exception:
+                pass
+        # 移除已关闭项 + 退一格
+        self.pages = [p for p in self.pages if not p.is_closed()]
+        self.active_index = max(0, len(self.pages) - 1)
+        return self.active
+
+
 class ActionExecutor:
     """对单条 action 执行 Playwright 动作"""
 
-    def __init__(self, page, default_timeout: int = 10000):
-        self.page = page
-        self.locator = ElementLocator(page)
+    def __init__(self, page_or_holder: Union[PageHolder, Any], default_timeout: int = 10000):
+        # 兼容老调用：传 page 也行（自动包成 PageHolder）
+        if isinstance(page_or_holder, PageHolder):
+            self.holder = page_or_holder
+        else:
+            self.holder = PageHolder(page_or_holder)
         self.timeout = default_timeout
+
+    @property
+    def page(self):
+        """当前活动 page（动态获取，自动跟随新窗口）"""
+        return self.holder.active
+
+    @property
+    def locator(self) -> ElementLocator:
+        """每次调用基于最新 page 构造定位器"""
+        return ElementLocator(self.page)
 
     def execute(self, action: Dict[str, Any]) -> Tuple[bool, str]:
         """执行一个动作，返回 (是否成功, 消息)"""
@@ -218,10 +306,36 @@ class ActionExecutor:
         return True, f"等待 {secs} 秒"
 
     def _do_wait_for(self, a):
+        """等待元素到达指定状态。
+
+        与其他动作不同，wait_for 的语义本身就是"现在没有，等它出现"，
+        因此不能像 click/fill 那样要求 smart_find 在调用时就立刻命中。
+        策略：
+          1. 用 build_candidates 拿到候选 locator 列表（**不做存在性校验**）
+          2. 顺序对每个候选调用 Playwright Locator.wait_for(state, timeout)
+          3. 任意一个等到即成功；全部超时才报错
+          4. 平均分摊总超时，避免单个候选占满
+        """
         state = a.get("value") or "visible"
-        el = self.locator.smart_find(a["target"])
-        el.wait_for(state=state, timeout=self.timeout)
-        return True, f"{a['target']} 已 {state}"
+        target = a["target"]
+        candidates, _ = self.locator.build_candidates(target)
+        if not candidates:
+            raise LookupError(f"未能为「{target}」生成等待候选定位器")
+
+        # 平均分摊（最少 1.5s，最多 self.timeout）
+        per = max(1500, int(self.timeout / max(1, len(candidates))))
+        last_err = None
+        for c in candidates:
+            try:
+                c.first.wait_for(state=state, timeout=per)
+                return True, f"{target} 已 {state}"
+            except Exception as e:
+                last_err = e
+                continue
+        raise TimeoutError(
+            f"等待「{target}」{state} 超时（已尝试 {len(candidates)} 个候选定位器）。"
+            f"最后错误：{last_err}"
+        )
 
     # ===================== 滚动 / 截图 =====================
     def _do_scroll_to(self, a):
@@ -244,6 +358,53 @@ class ActionExecutor:
         path = os.path.join(SCREENSHOTS_DIR, f"{safe}_{ts}.png")
         self.page.screenshot(path=path, full_page=True)
         return True, f"截图已保存: {os.path.basename(path)}"
+
+    # ===================== 多窗口控制 =====================
+    def _do_switch_window(self, a):
+        """切换 page。
+        value: "new" / "latest" / "main" / "原" / 数字索引（0 起）
+        默认 latest。
+        """
+        target = (a.get("value") or "latest").strip().lower()
+        page = None
+        if target in ("main", "原", "原窗口", "first", "0"):
+            page = self.holder.switch_to_main()
+            label = "主窗口"
+        elif target.isdigit():
+            idx = int(target)
+            if 0 <= idx < len(self.holder.pages):
+                self.holder.active_index = idx
+                page = self.holder.active
+                label = f"#{idx} 窗口"
+            else:
+                return False, f"窗口索引越界: {idx}（共 {len(self.holder.pages)} 个）"
+        else:
+            page = self.holder.switch_to_latest()
+            label = "最新窗口"
+        if not page:
+            return False, "无可切换的窗口"
+        try:
+            page.bring_to_front()
+        except Exception:
+            pass
+        try:
+            url = page.url
+        except Exception:
+            url = "?"
+        return True, f"已切换到{label}（{url}）"
+
+    def _do_close_window(self, a):
+        """关闭当前 page，并自动切回前一个。"""
+        if len(self.holder.pages) <= 1:
+            return False, "仅剩主窗口，不允许关闭"
+        page = self.holder.close_active()
+        if not page:
+            return False, "关闭后无可用窗口"
+        try:
+            url = page.url
+        except Exception:
+            url = "?"
+        return True, f"已关闭当前窗口，回到（{url}）"
 
     # ===================== 断言 =====================
     def _do_assert_text(self, a):

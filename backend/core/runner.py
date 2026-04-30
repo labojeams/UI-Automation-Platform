@@ -105,10 +105,14 @@ def _clear_frames(run_id: str):
 
 # ---------------- 持久化 ----------------
 def _save_report(state):
+    """保留 JSON 报告文件作为备份（DB 是主存储）。"""
     os.makedirs(REPORTS_DIR, exist_ok=True)
     path = os.path.join(REPORTS_DIR, f"{state['id']}.json")
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(state, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"[warn] save report json failed: {e}")
 
 
 def _persist_case_results(state):
@@ -117,6 +121,14 @@ def _persist_case_results(state):
     if not suite:
         return
     storage.update_suite(suite["id"], suite)
+
+
+def _persist_run_to_db(state):
+    """运行结束后把 run / run_logs / step_results 写入数据库。"""
+    try:
+        storage.save_run(state)
+    except Exception as e:
+        print(f"[warn] save run to db failed: {e}")
 
 
 # ---------------- 异步执行 ----------------
@@ -146,6 +158,7 @@ def run_suite_async(suite_id: str) -> Optional[Dict[str, Any]]:
             state["finished_at"] = int(time.time() * 1000)
             _persist_case_results(state)
             _save_report(state)
+            _persist_run_to_db(state)
             _clear_frames(state["id"])
 
     threading.Thread(target=_worker, daemon=True).start()
@@ -184,6 +197,7 @@ def run_case_async(case_id: str) -> Optional[Dict[str, Any]]:
             state["finished_at"] = int(time.time() * 1000)
             _persist_case_results(state)
             _save_report(state)
+            _persist_run_to_db(state)
             _clear_frames(state["id"])
 
     threading.Thread(target=_worker, daemon=True).start()
@@ -192,12 +206,20 @@ def run_case_async(case_id: str) -> Optional[Dict[str, Any]]:
 
 def get_run(run_id: str) -> Optional[Dict[str, Any]]:
     with _lock:
-        return _runs.get(run_id)
+        state = _runs.get(run_id)
+    if state:
+        return state
+    # 内存没有则查 DB（历史回看）
+    return storage.get_run_db(run_id)
 
 
 def list_runs():
+    """运行列表：合并内存中正在运行/最近完成 + DB 历史。"""
     with _lock:
-        return [
+        live = [
             {k: v for k, v in r.items() if k != "logs"}
             for r in _runs.values()
         ]
+    live_ids = {r["id"] for r in live}
+    history = [r for r in storage.list_runs_db(limit=50) if r["id"] not in live_ids]
+    return live + history

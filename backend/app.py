@@ -24,16 +24,21 @@ from flask import Flask, jsonify, request, send_from_directory, abort
 if __package__ in (None, ""):
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from backend.models import storage
+    from backend.models.db import init_db
     from backend.core import runner
     from backend.core.parser import parse_step, get_keyword_help
     from backend.core.llm_parser import LLMParser
     from backend.config import SCREENSHOTS_DIR
 else:
     from .models import storage
+    from .models.db import init_db
     from .core import runner
     from .core.parser import parse_step, get_keyword_help
     from .core.llm_parser import LLMParser
     from .config import SCREENSHOTS_DIR
+
+# 启动即建表（已存在则跳过）
+init_db()
 
 try:
     from flask_cors import CORS
@@ -55,16 +60,24 @@ sock = Sock(app) if Sock else None
 
 
 # -------------------- 静态前端 --------------------
+def _no_cache(resp):
+    """禁用前端静态资源缓存，避免改完代码刷新看不到。"""
+    resp.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    resp.headers["Pragma"] = "no-cache"
+    resp.headers["Expires"] = "0"
+    return resp
+
+
 @app.route("/")
 def index():
-    return send_from_directory(FRONTEND_DIR, "index.html")
+    return _no_cache(send_from_directory(FRONTEND_DIR, "index.html"))
 
 
 @app.route("/<path:path>")
 def static_file(path):
     full = os.path.join(FRONTEND_DIR, path)
     if os.path.isfile(full):
-        return send_from_directory(FRONTEND_DIR, path)
+        return _no_cache(send_from_directory(FRONTEND_DIR, path))
     abort(404)
 
 
@@ -149,6 +162,16 @@ def api_get_run(run_id):
 @app.route("/api/runs", methods=["GET"])
 def api_list_runs():
     return jsonify(runner.list_runs())
+
+
+@app.route("/api/runs/history", methods=["GET"])
+def api_run_history():
+    """从数据库查询运行历史（分页可选 ?limit=N，默认 50）"""
+    try:
+        limit = int(request.args.get("limit", 50))
+    except ValueError:
+        limit = 50
+    return jsonify(storage.list_runs_db(limit=limit))
 
 
 # -------------------- 浏览器画面流 --------------------

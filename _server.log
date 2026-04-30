@@ -6,3 +6,790 @@
 ==================================================
  * Serving Flask app 'app'
  * Debug mode: off
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 点击 xpath=//*[@id="root"]/div[1]/div[1]/div[1]/div[2]/div[1]/img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '点击 xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「点击 xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step8_20260430_172318.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[error]   -> wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("在线销售").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step5_20260430_172717.png
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 xpath=//*[@id='root']/div[1]/div[1]/div[1]/div[2]/div[1]/img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step8_20260430_172724.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 点击搜索框，输入”比伯“ | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '搜索框', 'value': '比伯'}
+[error]   -> fill 执行失败: 未找到精确匹配的元素：「搜索框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step9_20260430_173119.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[error]   -> wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("在线销售").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step5_20260430_174614.png
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话 输入框,输入”比伯“ | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话 输入框', 'value': '比伯'}
+[error]   -> fill 执行失败: 未找到精确匹配的元素：「placeholder=请输入商机ID、客户姓名或客户电话 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step10_20260430_174626.png
+[info] 步骤 11: 点击”搜索”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 的比伯 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司 的比伯', 'value': 'visible'}
+[error]   -> wait_for 执行失败: 等待「SHJ成都分公司 的比伯」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("SHJ成都分公司 的比伯").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step12_20260430_174646.png
+[info] 步骤 13: 点击“新增接待”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '新增接待 按钮', 'value': None}
+[info]   -> 已点击 新增接待 按钮
+[info] 步骤 14: 点击 xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1]', 'value': None}
+[info]   -> 已点击 xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1]（force）
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话 输入框,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话 输入框', 'value': '比伯'}
+[error]   -> fill 执行失败: 未找到精确匹配的元素：「placeholder=请输入商机ID、客户姓名或客户电话 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step10_20260430_175000.png
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 点击 xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1]', 'value': None}
+[info]   -> 已点击 xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1]
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 点击 xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1]', 'value': None}
+[info]   -> 已点击 xpath=//*[contains(text(),SHJ成都分公司)]/following::button[contains(.,新增接待)][1]
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 滚动到 xpath=//*[contains(text(),SHJ成都分公司)]/ancestor::*[.//* | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'xpath=//*[contains(text(),SHJ成都分公司)]/ancestor::*[.//*', 'value': None}
+[error]   -> scroll_to 执行失败: 未找到精确匹配的元素：「xpath=//*[contains(text(),SHJ成都分公司)]/ancestor::*[.//*」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step13_20260430_180220.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[text()=接待][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[text()=接待][1]', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[text()=接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_181215.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[error]   -> wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("在线销售").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step5_20260430_181345.png
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_181406.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「密码登录」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step1_20260430_181425.png
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[error]   -> fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step2_20260430_181427.png
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[error]   -> fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step3_20260430_181430.png
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[error]   -> wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("在线销售").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step5_20260430_181449.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「在线销售」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step6_20260430_181451.png
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info]   -> 关于我们 已 visible
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info]   -> 在线销售 已 visible
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售[info]   -> 已点击 搜索 按钮
+
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[error]   -> wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("关于我们").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step7_20260430_181509.png
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1] | 预期: 点击成功
+
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]', 'value': None}
+
+[error]   -> click 执行失败: 未找到精确匹配的元素：「css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+
+[warn] 已保存失败截图：FAIL_登录_step8_20260430_181511.png
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_181511.png
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_181523.png
+[error]   -> wait_for 执行失败: 等待「选择商机」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("选择商机").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step9_20260430_181528.png
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[error]   -> fill 执行失败: 未找到精确匹配的元素：「placeholder=请输入商机ID、客户姓名或客户电话」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step10_20260430_181530.png
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「搜索 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step11_20260430_181532.png
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[error]   -> wait_for 执行失败: 等待「SHJ成都分公司」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("SHJ成都分公司").first to be visible
+
+[warn] 已保存失败截图：FAIL_登录_step12_20260430_181550.png
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[error]   -> scroll_to 执行失败: 未找到精确匹配的元素：「text=SHJ成都分公司」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step13_20260430_181552.png
+[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_181554.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[text()=新增接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_181631.png
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 在线销售 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info] 🎥 浏览器画面嵌入已启用（每步截帧推送）
+[info] -- 用例：登录 --
+[error]   -> wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.
+Call log:
+  - waiting for get_by_test_id("关于我们").first to be visible
+
+[info] 前置：已打开 https://jmyz-test.jdtest.net/main
+[warn] 已保存失败截图：FAIL_登录_step7_20260430_181936.png
+[info] 步骤 1: 点击“密码登录” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}
+[info]   -> 已点击 密码登录
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}
+[info]   -> 在 账号 输入框 输入了「8040094」
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}
+[info]   -> 在 密码 输入框 输入了「SDLCOSO2.0shj」
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 4: 点击“登录”按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}
+[info]   -> 已点击 登录 按钮
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info] 步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}
+[info]   -> 已点击 搜索 按钮
+[info]   -> 在线销售 已 visible
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 6: 点击“在线销售” | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}
+[info]   -> 已点击 在线销售
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}
+[info]   -> 关于我们 已 visible
+[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[normalize-space(.)=新增接待][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[normalize-space(.)=新增接待][1]', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[normalize-space(.)=新增接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_181952.png
+[info] 步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}
+[info]   -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img
+[info] 步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}
+[info]   -> 选择商机 已 visible
+[info] 步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功
+[debug] 解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}
+[info]   -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」
+[info] 步骤 11: 点击 搜索 按钮 | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}
+[info]   -> 已点击 搜索 按钮
+[info] 步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”
+[debug] 解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}
+[info]   -> SHJ成都分公司 已 visible
+[info] 步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司
+[debug] 解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}
+[info]   -> 已滚动到 text=SHJ成都分公司
+[info] 步骤 14: 点击 xpath=//*[text()=SHJ成都分公司]/following::button[normalize-space(.)=新增接待][1] | 预期: 点击成功
+[debug] 解析(keyword)：{'action': 'click', 'target': 'xpath=//*[text()=SHJ成都分公司]/following::button[normalize-space(.)=新增接待][1]', 'value': None}
+[error]   -> click 执行失败: 未找到精确匹配的元素：「xpath=//*[text()=SHJ成都分公司]/following::button[normalize-space(.)=新增接待][1]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。
+[warn] 已保存失败截图：FAIL_登录_step14_20260430_182006.png

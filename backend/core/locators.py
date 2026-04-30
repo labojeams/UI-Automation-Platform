@@ -68,19 +68,16 @@ class ElementLocator:
             xpath = "xpath=" + xpath
         return self.page.locator(xpath)
 
-    # ========== 智能查找（仅精确匹配） ==========
-    def smart_find(self, description: str):
-        """智能查找：根据自然语言描述按多策略级联尝试，**全部使用精确匹配**。
+    # ========== 候选构造（不做存在校验，wait_for 等场景使用） ==========
+    def build_candidates(self, description: str):
+        """根据描述生成候选 locator 列表（**不校验是否存在**）。
 
-        策略顺序（任一命中即返回，未命中直接抛 LookupError）：
-            1. 显式前缀（css=/xpath=/text=/role=/testid=/placeholder=/label=/title=/alt=）
-            2. # / . / [ 开头按 CSS；// 开头按 XPath
-            3. 角色关键词识别（按钮/链接/输入框/复选框/单选框/搜索框/下拉/图片）
-                - 角色 + 名称（exact=True）
-                - 名称容忍空白的"准精确"正则（如 "登 录" 视同 "登录"，但仍是整字符串等价）
-                - 对输入类追加 placeholder / label 精确匹配
-                - 仅当 clean 为空时，才允许"裸角色 CSS 兜底"
-            4. 按 文本 / placeholder / label / title / alt / testid 精确匹配
+        与 smart_find 共享同一套候选规则，但允许调用方对每个 locator
+        自行调用 Playwright 的 wait_for(state=...)，避免 wait_for
+        语义被精确匹配的早期校验破坏。
+
+        返回 (candidates: List[Locator], description: str)
+        candidates 至少 1 个；若描述为空则抛 ValueError。
         """
         desc = description.strip()
         if not desc:
@@ -99,28 +96,19 @@ class ElementLocator:
         }
         for prefix, fn in prefix_map.items():
             if desc.lower().startswith(prefix):
-                el = fn(desc[len(prefix):])
-                self._must_hit(el, desc)
-                return el.first
+                return [fn(desc[len(prefix):])], desc
         if desc.lower().startswith("role="):
             body = desc[5:]
             if ":" in body:
                 role, name = body.split(":", 1)
-                el = self.by_role(role.strip(), name.strip(), exact=True)
-            else:
-                el = self.by_role(body.strip())
-            self._must_hit(el, desc)
-            return el.first
+                return [self.by_role(role.strip(), name.strip(), exact=True)], desc
+            return [self.by_role(body.strip())], desc
 
         # 2. CSS / XPath 选择器特征
         if desc.startswith(("//", "(/")):
-            el = self.by_xpath(desc)
-            self._must_hit(el, desc)
-            return el.first
+            return [self.by_xpath(desc)], desc
         if desc.startswith(("#", ".", "[")):
-            el = self.by_css(desc)
-            self._must_hit(el, desc)
-            return el.first
+            return [self.by_css(desc)], desc
 
         # 3. 角色关键词识别
         role_keywords = [
@@ -151,29 +139,22 @@ class ElementLocator:
 
         if matched_role:
             if clean:
-                # 3.1 角色 + 名称（精确）
                 candidates.append(self.by_role(matched_role, clean, exact=True))
-                # 按钮 经常被实现为 link / tab / 纯文本元素；这里都按精确名称匹配
                 if matched_role == "button":
                     candidates.append(self.by_role("link", clean, exact=True))
                     candidates.append(self.by_role("tab", clean, exact=True))
                     candidates.append(self.by_role("menuitem", clean, exact=True))
                     candidates.append(self.by_text(clean, exact=True))
 
-                # 3.2 输入类：补充 placeholder / label 的精确匹配
                 if matched_role in ("textbox", "searchbox", "combobox"):
                     candidates.append(self.by_placeholder(clean, exact=True))
                     candidates.append(self.by_label(clean, exact=True))
-                    # 兜底：定位"标签文字 == clean"的元素附近最近的输入框/下拉
-                    # 适用于页面把"账号/密码"作为同级 span/label 放在 input 旁边的结构
                     safe = clean.replace('"', '\\"')
-                    # 标签紧随其后的输入框
                     near_xpath = (
                         f"//*[normalize-space(text())=\"{safe}\"]"
                         f"/following::*[self::input or self::textarea or self::select][1]"
                     )
                     candidates.append(self.by_xpath(near_xpath))
-                    # 同一容器内的输入框（标签作为兄弟节点/嵌套）
                     container_xpath = (
                         f"//*[normalize-space(text())=\"{safe}\"]"
                         f"/ancestor::*[.//input or .//textarea or .//select][1]"
@@ -181,10 +162,6 @@ class ElementLocator:
                     )
                     candidates.append(self.by_xpath(container_xpath))
 
-                # 3.3 容忍中间空白的"准精确"正则：仅在每个字符之间允许 0~N 空白，
-                # 整体仍要求完整匹配（^...$），不会子串命中其他词。
-                # 注意：仅对"按钮/链接"等以可见文本作为名称的元素有意义；
-                # 对输入框/复选框等用文本匹配会命中标签元素而不是输入框本身。
                 if matched_role in ("button", "link", "tab", "menuitem"):
                     spaced = r"\s*".join(re.escape(ch) for ch in clean)
                     strict_pattern = re.compile(r"^\s*" + spaced + r"\s*$")
@@ -193,19 +170,14 @@ class ElementLocator:
                     except Exception:
                         pass
                     try:
-                        candidates.append(
-                            self.by_role("button", strict_pattern, exact=False)
-                        )
+                        candidates.append(self.by_role("button", strict_pattern, exact=False))
                     except Exception:
                         pass
                     try:
-                        candidates.append(
-                            self.by_role("link", strict_pattern, exact=False)
-                        )
+                        candidates.append(self.by_role("link", strict_pattern, exact=False))
                     except Exception:
                         pass
             else:
-                # 没有名字：仅在没指明名称时，允许通用 CSS 兜底（用户主动只写"按钮"等）
                 if matched_role == "searchbox":
                     candidates.append(self.by_css(
                         "input[type=search], input#kw, input[name=wd], "
@@ -225,11 +197,15 @@ class ElementLocator:
                 else:
                     candidates.append(self.by_role(matched_role))
 
-        # 4. 无角色关键词：直接走精确文本/属性匹配
+        # 4. 无角色关键词：精确文本/属性
         target = clean or desc
         if not matched_role:
             candidates.extend([
                 self.by_text(target, exact=True),
+                self.by_role("button", target, exact=True),
+                self.by_role("link", target, exact=True),
+                self.by_role("menuitem", target, exact=True),
+                self.by_role("tab", target, exact=True),
                 self.by_placeholder(target, exact=True),
                 self.by_label(target, exact=True),
                 self.by_title(target, exact=True),
@@ -237,8 +213,17 @@ class ElementLocator:
                 self.by_test_id(target),
             ])
 
-        # 候选遍历：命中即返回（精确匹配，命中多个时取第一个 visible/可点击的，
-        # 否则取 first，由后续 click 自带可见性等待）
+        return candidates, desc
+
+    # ========== 智能查找（仅精确匹配） ==========
+    def smart_find(self, description: str):
+        """智能查找：根据自然语言描述按多策略级联尝试，**全部使用精确匹配**。
+
+        策略顺序由 build_candidates 决定（任一命中即返回，未命中直接抛 LookupError）。
+        """
+        candidates, desc = self.build_candidates(description)
+
+        # 候选遍历：命中即返回；命中多个时取首个 visible
         for c in candidates:
             try:
                 cnt = c.count()
@@ -248,7 +233,6 @@ class ElementLocator:
                 continue
             return self._pick_visible(c)
 
-        # 全部未命中：直接抛错，提示用户使用更精确的描述或显式前缀
         raise LookupError(
             f"未找到精确匹配的元素：「{description}」。"
             f"请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"

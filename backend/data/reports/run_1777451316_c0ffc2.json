@@ -1,0 +1,233 @@
+{
+  "id": "run_1777451316_c0ffc2",
+  "scope": "case",
+  "target_name": "登录积木云装",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1777451317211,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1777451317262,
+      "level": "info",
+      "msg": "-- 用例：登录积木云装 --"
+    },
+    {
+      "ts": 1777451318364,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1777451318680,
+      "level": "info",
+      "msg": "步骤 1: 点击”密码登录“按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1777451318680,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1777451318846,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「密码登录 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1777451318906,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录积木云装_step1_20260429_162838.png"
+    },
+    {
+      "ts": 1777451320969,
+      "level": "info",
+      "msg": "步骤 2: 点击”账号“输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1777451320969,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1777451321068,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1777451321173,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录积木云装_step2_20260429_162841.png"
+    },
+    {
+      "ts": 1777451323216,
+      "level": "info",
+      "msg": "步骤 3: 点击”密码“输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1777451323216,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1777451323298,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1777451323390,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录积木云装_step3_20260429_162843.png"
+    },
+    {
+      "ts": 1777451325432,
+      "level": "info",
+      "msg": "步骤 4: 点击”登录“按钮 | 预期: 登录成功，页面有”工作台“菜单"
+    },
+    {
+      "ts": 1777451325432,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1777451325567,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    },
+    {
+      "ts": 1777451327615,
+      "level": "info",
+      "msg": "步骤 5: 点击侧边栏菜单“在线销售” | 预期: 打开新的页面"
+    },
+    {
+      "ts": 1777451327615,
+      "level": "error",
+      "msg": "无法解析该步骤（关键词与LLM均未识别）"
+    },
+    {
+      "ts": 1777451327705,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录积木云装_step5_20260429_162847.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_a0a14fe076",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 11443,
+    "case": {
+      "id": "case_a0a14fe076",
+      "name": "登录积木云装",
+      "precondition": "",
+      "steps": [
+        {
+          "id": "step_58dda6ba55",
+          "description": "点击”密码登录“按钮",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「密码登录 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_3e4cf7a83f",
+          "description": "点击”账号“输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_3042951642",
+          "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_9faf6a0446",
+          "description": "点击”登录“按钮",
+          "expected": "登录成功，页面有”工作台“菜单",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_09a732073f",
+          "description": "点击侧边栏菜单“在线销售”",
+          "expected": "打开新的页面",
+          "actual": "无法解析该步骤（关键词与LLM均未识别）",
+          "status": "fail"
+        }
+      ],
+      "status": "fail"
+    },
+    "suite": {
+      "id": "suite_89974e902c",
+      "name": "下单（整装）",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "登录->下单",
+      "tags": [
+        "login"
+      ],
+      "cases": [
+        {
+          "id": "case_a0a14fe076",
+          "name": "登录积木云装",
+          "precondition": "",
+          "steps": [
+            {
+              "id": "step_58dda6ba55",
+              "description": "点击”密码登录“按钮",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「密码登录 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_3e4cf7a83f",
+              "description": "点击”账号“输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_3042951642",
+              "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_9faf6a0446",
+              "description": "点击”登录“按钮",
+              "expected": "登录成功，页面有”工作台“菜单",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_09a732073f",
+              "description": "点击侧边栏菜单“在线销售”",
+              "expected": "打开新的页面",
+              "actual": "无法解析该步骤（关键词与LLM均未识别）",
+              "status": "fail"
+            }
+          ],
+          "status": "fail"
+        },
+        {
+          "id": "case_e56c83fb8f",
+          "name": "下单",
+          "precondition": "",
+          "steps": [
+            {
+              "id": "step_a2ab834a85",
+              "description": "点击侧边栏菜单“在线销售”",
+              "expected": "打开新的页面",
+              "actual": "",
+              "status": "pending"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1777451316404,
+  "finished_at": 1777451327847
+}

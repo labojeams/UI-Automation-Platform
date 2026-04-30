@@ -1,0 +1,296 @@
+{
+  "id": "run_1777540976_a7189f",
+  "scope": "case",
+  "target_name": "登录",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1777540978754,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1777540978872,
+      "level": "info",
+      "msg": "-- 用例：登录 --"
+    },
+    {
+      "ts": 1777540981988,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1777540982040,
+      "level": "info",
+      "msg": "步骤 1: 点击“密码登录” | 预期: 点击成功"
+    },
+    {
+      "ts": 1777540982041,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}"
+    },
+    {
+      "ts": 1777540982231,
+      "level": "info",
+      "msg": "  -> 已点击 密码登录"
+    },
+    {
+      "ts": 1777540984279,
+      "level": "info",
+      "msg": "步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1777540984280,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1777540984397,
+      "level": "info",
+      "msg": "  -> 在 账号 输入框 输入了「8040094」"
+    },
+    {
+      "ts": 1777540986444,
+      "level": "info",
+      "msg": "步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1777540986446,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1777540986545,
+      "level": "info",
+      "msg": "  -> 在 密码 输入框 输入了「SDLCOSO2.0shj」"
+    },
+    {
+      "ts": 1777540988579,
+      "level": "info",
+      "msg": "步骤 4: 点击“登录”按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1777540988582,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1777540988696,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    },
+    {
+      "ts": 1777540990743,
+      "level": "info",
+      "msg": "步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1777540990743,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}"
+    },
+    {
+      "ts": 1777540991144,
+      "level": "info",
+      "msg": "  -> 在线销售 已 visible"
+    },
+    {
+      "ts": 1777540993181,
+      "level": "info",
+      "msg": "步骤 6: 点击“在线销售” | 预期: 点击成功"
+    },
+    {
+      "ts": 1777540993182,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}"
+    },
+    {
+      "ts": 1777540993297,
+      "level": "info",
+      "msg": "  -> 已点击 在线销售"
+    },
+    {
+      "ts": 1777540995751,
+      "level": "info",
+      "msg": "步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1777540995754,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}"
+    },
+    {
+      "ts": 1777540996098,
+      "level": "info",
+      "msg": "  -> 关于我们 已 visible"
+    },
+    {
+      "ts": 1777540998144,
+      "level": "info",
+      "msg": "步骤 8: 点击 点击 xpath=//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[2]/div[1]/img | 预期: 点击成功"
+    },
+    {
+      "ts": 1777540998147,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '点击 xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img', 'value': None}"
+    },
+    {
+      "ts": 1777540998228,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「点击 xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1777540998517,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step8_20260430_172318.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_8e66ef7b00",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 23783,
+    "case": {
+      "id": "case_8e66ef7b00",
+      "name": "登录",
+      "precondition": "",
+      "status": "fail",
+      "steps": [
+        {
+          "id": "step_54f0cd2f20",
+          "description": "点击“密码登录”",
+          "expected": "点击成功",
+          "actual": "已点击 密码登录",
+          "status": "pass"
+        },
+        {
+          "id": "step_b99c7d3369",
+          "description": "点击“账号”输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "在 账号 输入框 输入了「8040094」",
+          "status": "pass"
+        },
+        {
+          "id": "step_42d3a26a4e",
+          "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+          "status": "pass"
+        },
+        {
+          "id": "step_a07fcda327",
+          "description": "点击“登录”按钮",
+          "expected": "点击成功",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_1b87bc9c59",
+          "description": "等待“在线销售”出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "在线销售 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_5b36d63b53",
+          "description": "点击“在线销售”",
+          "expected": "点击成功",
+          "actual": "已点击 在线销售",
+          "status": "pass"
+        },
+        {
+          "id": "step_7b5349cceb",
+          "description": "等待”关于我们“出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "关于我们 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_9be412b929",
+          "description": "点击 点击 xpath=//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[2]/div[1]/img",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「点击 xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        }
+      ]
+    },
+    "suite": {
+      "id": "suite_ea8b897c67",
+      "name": "下单（整装）",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "",
+      "tags": [
+        "login"
+      ],
+      "cases": [
+        {
+          "id": "case_8e66ef7b00",
+          "name": "登录",
+          "precondition": "",
+          "status": "fail",
+          "steps": [
+            {
+              "id": "step_54f0cd2f20",
+              "description": "点击“密码登录”",
+              "expected": "点击成功",
+              "actual": "已点击 密码登录",
+              "status": "pass"
+            },
+            {
+              "id": "step_b99c7d3369",
+              "description": "点击“账号”输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "在 账号 输入框 输入了「8040094」",
+              "status": "pass"
+            },
+            {
+              "id": "step_42d3a26a4e",
+              "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+              "status": "pass"
+            },
+            {
+              "id": "step_a07fcda327",
+              "description": "点击“登录”按钮",
+              "expected": "点击成功",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_1b87bc9c59",
+              "description": "等待“在线销售”出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "在线销售 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_5b36d63b53",
+              "description": "点击“在线销售”",
+              "expected": "点击成功",
+              "actual": "已点击 在线销售",
+              "status": "pass"
+            },
+            {
+              "id": "step_7b5349cceb",
+              "description": "等待”关于我们“出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "关于我们 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_9be412b929",
+              "description": "点击 点击 xpath=//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[2]/div[1]/img",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「点击 xpath=//*[@id= root ]/div[1]/div[1]/div[1]/div[2]/div[1]/img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1777540976890,
+  "finished_at": 1777541000674
+}

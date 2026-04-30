@@ -101,6 +101,16 @@ RULES = [
     # 上传文件
     (r"^\s*(?:上传文件|upload)\s+(.+?)\s+(?:到|至|to)\s+(.+?)\s*$",
      lambda m: _action("upload", target=m.group(2).strip(), value=m.group(1).strip())),
+
+    # 多窗口 / 标签页 控制
+    (r"^\s*(?:切换到?|跳到?|switch\s*to)\s*(?:新|最新)\s*(?:窗口|标签页|页面|tab|window)\s*$",
+     lambda m: _action("switch_window", value="latest")),
+    (r"^\s*(?:切换到?|跳到?|switch\s*to)\s*(?:原|首|主|第一个|main|first)\s*(?:窗口|标签页|页面|tab|window)\s*$",
+     lambda m: _action("switch_window", value="main")),
+    (r"^\s*(?:切换到?|跳到?|switch\s*to)\s*(?:窗口|标签页|页面|tab|window)\s*(\d+)\s*$",
+     lambda m: _action("switch_window", value=m.group(1))),
+    (r"^\s*(?:关闭当前(?:窗口|标签页|页面)?|关闭(?:窗口|标签页|页面)|close\s*(?:current\s*)?(?:tab|window|page)?)\s*$",
+     lambda m: _action("close_window")),
 ]
 
 
@@ -197,6 +207,7 @@ class KeywordParser:
             "验证 标题 包含 <文本>  /  验证 页面 包含 <url片段>\n"
             "滚动到 <元素>  /  滚动到 页面底部\n"
             "截图 <名称>  /  刷新  /  后退  /  前进\n"
+            "切换到新窗口  /  切换到原窗口  /  切换到窗口 N  /  关闭当前窗口\n"
             "上传文件 <本地路径> 到 <元素>"
         )
 

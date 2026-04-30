@@ -7,7 +7,7 @@
     "timeout": 30
   },
   "browser": {
-    "headless": true,
+    "headless": false,
     "browser": "chromium",
     "viewport": {
       "width": 1280,

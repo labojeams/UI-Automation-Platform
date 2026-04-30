@@ -441,6 +441,54 @@ async function loadHelp() {
   } catch (e) { $("#help-text").textContent = "加载失败"; }
 }
 
+// ---------- 运行历史 ----------
+async function loadHistory() {
+  const tbody = $("#history-tbody");
+  tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-dim)">加载中...</td></tr>';
+  try {
+    const list = await api("/api/runs/history?limit=50");
+    if (!list.length) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-dim)">暂无历史记录</td></tr>';
+      return;
+    }
+    tbody.innerHTML = list.map(r => {
+      const sm = r.summary || {};
+      const passed = sm.passed || 0;
+      const failed = sm.failed || 0;
+      const total = sm.total || 0;
+      const dur = sm.duration_ms ? (sm.duration_ms / 1000).toFixed(2) + "s" : "-";
+      const startedStr = r.started_at ? new Date(r.started_at).toLocaleString("zh-CN", { hour12: false }) : "-";
+      const statusCls = r.status === "done" ? "done" : (r.status === "error" ? "error" : "running");
+      return `<tr>
+        <td>${escapeHtml(startedStr)}</td>
+        <td>${escapeHtml(r.scope || "-")}</td>
+        <td>${escapeHtml(r.target_name || "-")}</td>
+        <td><span class="status-tag ${statusCls}">${escapeHtml(r.status || "-")}</span></td>
+        <td><span style="color:var(--green)">${passed}</span> / <span style="color:var(--red)">${failed}</span> / ${total}</td>
+        <td>${dur}</td>
+        <td><button class="btn small" onclick="viewHistoryRun('${r.id}')">查看</button></td>
+      </tr>`;
+    }).join("");
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="7" style="color:var(--red)">加载失败：${escapeHtml(e.message)}</td></tr>`;
+  }
+}
+
+async function viewHistoryRun(runId) {
+  try {
+    const r = await api(`/api/runs/${runId}`);
+    hideModal("modal-history");
+    state.currentRunId = runId;
+    $("#run-status").className = `badge ${r.status === "done" ? "done" : (r.status === "error" ? "error" : "running")}`;
+    $("#run-status").textContent = r.status === "done" ? "完成" : (r.status === "error" ? "异常" : "执行中");
+    renderLogs(r.logs || []);
+    renderSummary(r.summary);
+    $("#run-summary").innerHTML += `<div style="color:var(--text-dim);margin-top:4px">📌 历史回看 · run_id: ${runId}</div>`;
+  } catch (e) {
+    alert("加载历史详情失败：" + e.message);
+  }
+}
+
 async function testParse() {
   const sentence = $("#parse-input").value.trim();
   if (!sentence) return;
@@ -463,20 +511,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   $("#btn-config").addEventListener("click", async () => { await loadConfig(); showModal("modal-config"); });
   $("#btn-help").addEventListener("click", async () => { await loadHelp(); showModal("modal-help"); });
+  $("#btn-history").addEventListener("click", async () => { await loadHistory(); showModal("modal-history"); });
   $("#btn-save-config").addEventListener("click", saveConfig);
   $("#btn-save-suite").addEventListener("click", saveSuite);
   $("#btn-test-parse").addEventListener("click", testParse);
   $("#btn-add-case").addEventListener("click", () => $("#case-list-edit").appendChild(buildCaseBlock()));
 
-  // 关闭按钮
+  // 关闭按钮（仅通过 × / 取消按钮关闭，点击弹窗外遮罩不关闭）
   $$("[data-close]").forEach(el => el.addEventListener("click", () => hideModal(el.dataset.close)));
-  $$(".modal").forEach(m => m.addEventListener("click", (e) => { if (e.target === m) m.classList.add("hidden"); }));
 
   // 暴露给 inline onclick
   window.runSuite = runSuite;
   window.runCase = runCase;
   window.editSuite = editSuite;
   window.deleteSuite = deleteSuite;
+  window.viewHistoryRun = viewHistoryRun;
 
   loadSuites();
 });

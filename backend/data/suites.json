@@ -139,27 +139,48 @@
             "id": "step_58dda6ba55",
             "description": "点击”密码登录“按钮",
             "expected": "点击成功",
-            "actual": "",
-            "status": "pending"
+            "actual": "click 执行失败: 未找到精确匹配的元素：「密码登录 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+            "status": "fail"
           },
           {
             "id": "step_3e4cf7a83f",
             "description": "点击”账号“输入框，输入8040094",
             "expected": "输入成功",
-            "actual": "",
-            "status": "pending"
+            "actual": "fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+            "status": "fail"
           },
           {
             "id": "step_3042951642",
             "description": "点击”密码“输入框，输入SDLCOSO2.0shj",
             "expected": "输入成功",
-            "actual": "",
-            "status": "pending"
+            "actual": "fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+            "status": "fail"
           },
           {
             "id": "step_9faf6a0446",
             "description": "点击”登录“按钮",
             "expected": "登录成功，页面有”工作台“菜单",
+            "actual": "已点击 登录 按钮",
+            "status": "pass"
+          },
+          {
+            "id": "step_09a732073f",
+            "description": "点击侧边栏菜单“在线销售”",
+            "expected": "打开新的页面",
+            "actual": "无法解析该步骤（关键词与LLM均未识别）",
+            "status": "fail"
+          }
+        ]
+      },
+      {
+        "id": "case_e56c83fb8f",
+        "name": "下单",
+        "precondition": "",
+        "steps": [
+          {
+            "id": "step_a2ab834a85",
+            "description": "点击侧边栏菜单“在线销售”",
+            "expected": "打开新的页面",
             "actual": "",
             "status": "pending"
           }

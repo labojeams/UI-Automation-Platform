@@ -3,10 +3,12 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
-SUITES_FILE = os.path.join(DATA_DIR, "suites.json")
+SUITES_FILE = os.path.join(DATA_DIR, "suites.json")        # 兼容旧 JSON 备份
 REPORTS_DIR = os.path.join(DATA_DIR, "reports")
 SCREENSHOTS_DIR = os.path.join(REPORTS_DIR, "screenshots")
-CONFIG_FILE = os.path.join(DATA_DIR, "config.json")
+CONFIG_FILE = os.path.join(DATA_DIR, "config.json")        # 兼容旧 JSON 备份
+DB_FILE = os.path.join(DATA_DIR, "platform.db")            # SQLite 数据库
+DB_URL = f"sqlite:///{DB_FILE.replace(os.sep, '/')}"
 
 # 默认 LLM 配置（OpenAI 兼容）
 DEFAULT_LLM_CONFIG = {
