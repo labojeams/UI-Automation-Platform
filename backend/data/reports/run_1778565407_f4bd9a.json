@@ -1,0 +1,475 @@
+{
+  "id": "run_1778565407_f4bd9a",
+  "scope": "case",
+  "target_name": "登录",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1778565417153,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1778565418007,
+      "level": "info",
+      "msg": "-- 用例：登录 --"
+    },
+    {
+      "ts": 1778565422664,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1778565422757,
+      "level": "info",
+      "msg": "步骤 1: 点击“密码登录” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778565422761,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}"
+    },
+    {
+      "ts": 1778565423008,
+      "level": "info",
+      "msg": "  -> 已点击 密码登录"
+    },
+    {
+      "ts": 1778565425056,
+      "level": "info",
+      "msg": "步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778565425058,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1778565425190,
+      "level": "info",
+      "msg": "  -> 在 账号 输入框 输入了「8040094」"
+    },
+    {
+      "ts": 1778565427239,
+      "level": "info",
+      "msg": "步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1778565427242,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1778565427341,
+      "level": "info",
+      "msg": "  -> 在 密码 输入框 输入了「SDLCOSO2.0shj」"
+    },
+    {
+      "ts": 1778565429390,
+      "level": "info",
+      "msg": "步骤 4: 点击“登录”按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778565429390,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778565429523,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    },
+    {
+      "ts": 1778565431559,
+      "level": "info",
+      "msg": "步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778565431560,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778565446726,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n"
+    },
+    {
+      "ts": 1778565446801,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step5_20260512_135726.png"
+    },
+    {
+      "ts": 1778565448839,
+      "level": "info",
+      "msg": "步骤 6: 点击“在线销售” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778565448841,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}"
+    },
+    {
+      "ts": 1778565449008,
+      "level": "info",
+      "msg": "  -> 已点击 在线销售"
+    },
+    {
+      "ts": 1778565451885,
+      "level": "info",
+      "msg": "步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778565451886,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778565452827,
+      "level": "info",
+      "msg": "  -> 关于我们 已 visible"
+    },
+    {
+      "ts": 1778565454874,
+      "level": "info",
+      "msg": "步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功"
+    },
+    {
+      "ts": 1778565454875,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}"
+    },
+    {
+      "ts": 1778565455060,
+      "level": "info",
+      "msg": "  -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img"
+    },
+    {
+      "ts": 1778565457124,
+      "level": "info",
+      "msg": "步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗"
+    },
+    {
+      "ts": 1778565457124,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778565457239,
+      "level": "info",
+      "msg": "  -> 选择商机 已 visible"
+    },
+    {
+      "ts": 1778565459306,
+      "level": "info",
+      "msg": "步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778565459307,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}"
+    },
+    {
+      "ts": 1778565459443,
+      "level": "info",
+      "msg": "  -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」"
+    },
+    {
+      "ts": 1778565461505,
+      "level": "info",
+      "msg": "步骤 11: 点击 搜索 按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778565461505,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778565461676,
+      "level": "info",
+      "msg": "  -> 已点击 搜索 按钮"
+    },
+    {
+      "ts": 1778565463723,
+      "level": "info",
+      "msg": "步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”"
+    },
+    {
+      "ts": 1778565463724,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778565463790,
+      "level": "info",
+      "msg": "  -> SHJ成都分公司 已 visible"
+    },
+    {
+      "ts": 1778565465824,
+      "level": "info",
+      "msg": "步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司"
+    },
+    {
+      "ts": 1778565465826,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}"
+    },
+    {
+      "ts": 1778565465958,
+      "level": "info",
+      "msg": "  -> 已滚动到 text=SHJ成都分公司"
+    },
+    {
+      "ts": 1778565467991,
+      "level": "info",
+      "msg": "步骤 14: 点击 xpath=//tr[.//*[normalize-space(text())=\"SHJ成都分公司\"]]//button[normalize-space(.)=\"新增接待\"] | 预期: 点击成功"
+    },
+    {
+      "ts": 1778565467991,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'xpath=//tr[.//*[normalize-space(text())=\"SHJ成都分公司\"]]//button[normalize-space(.)=\"新增接待\"]', 'value': None}"
+    },
+    {
+      "ts": 1778565468056,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「xpath=//tr[.//*[normalize-space(text())=\"SHJ成都分公司\"]]//button[normalize-space(.)=\"新增接待\"]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778565468187,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step14_20260512_135748.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_8e66ef7b00",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 62900,
+    "case": {
+      "id": "case_8e66ef7b00",
+      "name": "登录",
+      "precondition": "",
+      "status": "fail",
+      "steps": [
+        {
+          "id": "step_54f0cd2f20",
+          "description": "点击“密码登录”",
+          "expected": "点击成功",
+          "actual": "已点击 密码登录",
+          "status": "pass"
+        },
+        {
+          "id": "step_b99c7d3369",
+          "description": "点击“账号”输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "在 账号 输入框 输入了「8040094」",
+          "status": "pass"
+        },
+        {
+          "id": "step_42d3a26a4e",
+          "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+          "status": "pass"
+        },
+        {
+          "id": "step_a07fcda327",
+          "description": "点击“登录”按钮",
+          "expected": "点击成功",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_1b87bc9c59",
+          "description": "等待“在线销售”出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_5b36d63b53",
+          "description": "点击“在线销售”",
+          "expected": "点击成功",
+          "actual": "已点击 在线销售",
+          "status": "pass"
+        },
+        {
+          "id": "step_7b5349cceb",
+          "description": "等待”关于我们“出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "关于我们 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_9be412b929",
+          "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+          "expected": "点击成功",
+          "actual": "已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+          "status": "pass"
+        },
+        {
+          "id": "step_bddbe3021b",
+          "description": "等待”选择商机“出现",
+          "expected": "页面出现”选择商机“弹窗",
+          "actual": "选择商机 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_0766488773",
+          "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+          "expected": "输入成功",
+          "actual": "在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」",
+          "status": "pass"
+        },
+        {
+          "id": "step_6983acb226",
+          "description": "点击 搜索 按钮",
+          "expected": "点击成功",
+          "actual": "已点击 搜索 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_43a12c2221",
+          "description": "等待 SHJ成都分公司 出现",
+          "expected": "页面出现“SHJ成都分公司 的比伯”",
+          "actual": "SHJ成都分公司 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_cc886958bf",
+          "description": "滚动到 text=SHJ成都分公司",
+          "expected": "出现SHJ成都分公司",
+          "actual": "已滚动到 text=SHJ成都分公司",
+          "status": "pass"
+        },
+        {
+          "id": "step_f37a55cd03",
+          "description": "点击 xpath=//tr[.//*[normalize-space(text())=\"SHJ成都分公司\"]]//button[normalize-space(.)=\"新增接待\"]",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「xpath=//tr[.//*[normalize-space(text())=\"SHJ成都分公司\"]]//button[normalize-space(.)=\"新增接待\"]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        }
+      ]
+    },
+    "suite": {
+      "id": "suite_ea8b897c67",
+      "name": "下单（整装）",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "",
+      "tags": [
+        "login"
+      ],
+      "cases": [
+        {
+          "id": "case_8e66ef7b00",
+          "name": "登录",
+          "precondition": "",
+          "status": "fail",
+          "steps": [
+            {
+              "id": "step_54f0cd2f20",
+              "description": "点击“密码登录”",
+              "expected": "点击成功",
+              "actual": "已点击 密码登录",
+              "status": "pass"
+            },
+            {
+              "id": "step_b99c7d3369",
+              "description": "点击“账号”输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "在 账号 输入框 输入了「8040094」",
+              "status": "pass"
+            },
+            {
+              "id": "step_42d3a26a4e",
+              "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+              "status": "pass"
+            },
+            {
+              "id": "step_a07fcda327",
+              "description": "点击“登录”按钮",
+              "expected": "点击成功",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_1b87bc9c59",
+              "description": "等待“在线销售”出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_5b36d63b53",
+              "description": "点击“在线销售”",
+              "expected": "点击成功",
+              "actual": "已点击 在线销售",
+              "status": "pass"
+            },
+            {
+              "id": "step_7b5349cceb",
+              "description": "等待”关于我们“出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "关于我们 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_9be412b929",
+              "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+              "expected": "点击成功",
+              "actual": "已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+              "status": "pass"
+            },
+            {
+              "id": "step_bddbe3021b",
+              "description": "等待”选择商机“出现",
+              "expected": "页面出现”选择商机“弹窗",
+              "actual": "选择商机 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_0766488773",
+              "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+              "expected": "输入成功",
+              "actual": "在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」",
+              "status": "pass"
+            },
+            {
+              "id": "step_6983acb226",
+              "description": "点击 搜索 按钮",
+              "expected": "点击成功",
+              "actual": "已点击 搜索 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_43a12c2221",
+              "description": "等待 SHJ成都分公司 出现",
+              "expected": "页面出现“SHJ成都分公司 的比伯”",
+              "actual": "SHJ成都分公司 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_cc886958bf",
+              "description": "滚动到 text=SHJ成都分公司",
+              "expected": "出现SHJ成都分公司",
+              "actual": "已滚动到 text=SHJ成都分公司",
+              "status": "pass"
+            },
+            {
+              "id": "step_f37a55cd03",
+              "description": "点击 xpath=//tr[.//*[normalize-space(text())=\"SHJ成都分公司\"]]//button[normalize-space(.)=\"新增接待\"]",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「xpath=//tr[.//*[normalize-space(text())=\"SHJ成都分公司\"]]//button[normalize-space(.)=\"新增接待\"]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1778565407067,
+  "finished_at": 1778565470370
+}

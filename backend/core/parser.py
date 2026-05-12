@@ -24,6 +24,45 @@ def _action(action: str, target: str = None, value: Any = None, **extra) -> Dict
     return data
 
 
+def _row_xpath(btn_text: str, anchor_text: str) -> str:
+    """生成「同时包含 btn_text 和 anchor_text 的最小公共祖先」内的按钮 XPath。
+
+    解决场景：列表/卡片结构下，按钮文字相同，需要用行内其它唯一文字（如公司名）锚定行。
+    例：_row_xpath("新增接待", "SHJ成都分公司") ->
+        xpath=(//*[.//*[normalize-space(.)="SHJ成都分公司"] and
+                   .//*[normalize-space(.)="新增接待"]]
+              [not(.//*[.//*[normalize-space(.)="SHJ成都分公司"] and
+                        .//*[normalize-space(.)="新增接待"]])])[1]
+              //*[normalize-space(.)="新增接待"][self::button or self::a or @role="button"
+                                                or ancestor::button or ancestor::a]
+
+    思路：
+      1. 找同时含两段文字的所有祖先元素
+      2. 用 [not(.//*[同条件])] 过滤「后代仍满足条件」的祖先 → 只剩最小行容器
+      3. [1] 双保险
+      4. 末尾锁定到真正可点击的 button/a（含 span 文字嵌套场景）
+    """
+    # XPath 里同时支持单双引号文本。用 concat 规避内部引号冲突
+    def _xp_literal(s: str) -> str:
+        if '"' not in s:
+            return f'"{s}"'
+        if "'" not in s:
+            return f"'{s}'"
+        # 两种引号都有，拆分后用 concat
+        parts = s.split('"')
+        return "concat(" + ", '\"', ".join(f'"{p}"' for p in parts) + ")"
+
+    a_lit = _xp_literal(anchor_text)
+    b_lit = _xp_literal(btn_text)
+    cond = f".//*[normalize-space(.)={a_lit}] and .//*[normalize-space(.)={b_lit}]"
+    xp = (
+        f'(//*[{cond}][not(.//*[{cond}])])[1]'
+        f'//*[normalize-space(.)={b_lit}]'
+        f'[self::button or self::a or @role="button" or ancestor::button[1] or ancestor::a[1]]'
+    )
+    return "xpath=" + xp
+
+
 RULES = [
     # 打开网址 / 跳转
     (r"^\s*(?:打开|访问|跳转到?|go\s*to|open)\s+(?:网址\s*)?(.+?)\s*$",
@@ -46,6 +85,41 @@ RULES = [
     # 点击 / 双击 / 悬停 / 勾选
     (r"^\s*(?:双击|double\s*click)\s+(.+?)\s*$",
      lambda m: _action("dblclick", target=m.group(1).strip())),
+
+    # ===== 通用「软分隔」片段（容忍空格 / 中英文逗号 / 顿号） =====
+    # \s*[,，、]?\s* 表示"可有可无的逗号/顿号"，避免「点击 A，直到 B」类写法落空
+    #
+    # 行级精定位 + 点击重试：
+    #   「点击 新增接待 在 SHJ成都分公司 的 卡片 直到 价格明细 出现 最多 5 次」
+    # 当列表里有多条同名按钮时，用「在 X 的 行/卡片」锚定唯一行内文字。
+    # 必须放在通用 click_until 之前，才能拦截「点击 A 直到 B」。
+    (r"^\s*(?:重试点击|点击重试|click_until|点击)\s+(.+?)\s+(?:在|within|of)\s+(.+?)\s+(?:的)?\s*"
+     r"(?:卡片|行|那一行|那一项|区域|card|row)"
+     r"\s*[,，、]?\s*(?:直到|until)\s+(.+?)\s*[,，、]?\s*(?:出现|显示|可见|visible|appear)"
+     r"(?:\s*[,，、]?\s*(?:最多|max|超时|至多|重试)\s*(\d+)\s*(?:次|times)?)?\s*$",
+     lambda m: _action("click_until",
+                       target=_row_xpath(m.group(1).strip(), m.group(2).strip()),
+                       value=m.group(3).strip(),
+                       max_retries=int(m.group(4)) if m.group(4) else 3)),
+
+    # 行级精定位 普通点击：「点击 新增接待 在 SHJ成都分公司 的 卡片」
+    # 必须放在通用 click_until / 通用 click 之前
+    (r"^\s*(?:点击|点一下|单击|click|tap)\s+(.+?)\s+(?:在|within|of)\s+(.+?)\s+(?:的)?\s*"
+     r"(?:卡片|行|那一行|那一项|区域|card|row)\s*$",
+     lambda m: _action("click",
+                       target=_row_xpath(m.group(1).strip(), m.group(2).strip()))),
+
+    # 点击-重试型：「点击 A 直到 B 出现」/「重试点击 A 直到 B 出现 最多 N 次」
+    # 用于异步加载场景：点击触发请求 → 若 loading 超时，自动重试点击直到目标元素可见
+    # 中文逗号「，」也作为合法分隔：「点击 A，直到 B 出现」
+    (r"^\s*(?:重试点击|点击重试|click_until|点击)\s+(.+?)"
+     r"\s*[,，、]?\s*(?:直到|until)\s+(.+?)\s*[,，、]?\s*(?:出现|显示|可见|visible|appear)"
+     r"(?:\s*[,，、]?\s*(?:最多|max|超时|至多|重试)\s*(\d+)\s*(?:次|times)?)?\s*$",
+     lambda m: _action("click_until",
+                       target=m.group(1).rstrip(" ,，、").strip(),
+                       value=m.group(2).rstrip(" ,，、").strip(),
+                       max_retries=int(m.group(3)) if m.group(3) else 3)),
+
     (r"^\s*(?:点击|点一下|单击|click|tap)\s+(.+?)\s*$",
      lambda m: _action("click", target=m.group(1).strip())),
     (r"^\s*(?:鼠标悬停|悬停|hover)(?:\s*在)?\s+(.+?)\s*$",
@@ -120,11 +194,26 @@ def _normalize(text: str) -> str:
 
     例：`点击"密码登录"按钮` -> `点击 密码登录 按钮`
         `点击"账号"输入框，输入8040094` -> `点击 账号 输入框, 输入8040094`
+
+    【特殊保护】当文本里包含显式定位前缀（css=/xpath=/text=/role=/
+    placeholder=/label=/testid=/title=/alt=）时，认为用户在写选择器，
+    引号是合法语法（如 xpath=//*[text()="登录"]），仅做全角→半角，
+    不再把 ASCII 引号替换成空格，避免破坏选择器语义。
     """
     if not text:
         return text
-    # 引号类装饰符号 → 空格（中文/英文/单引号/书名号/方括号）
-    quote_chars = "\u201c\u201d\u2018\u2019\u300a\u300b\u300c\u300d\u300e\u300f\u3010\u3011\"'`"
+    # 检测是否含选择器前缀：含 "xx=" 且 xx 在白名单内
+    selector_prefixes = ("css=", "xpath=", "text=", "role=",
+                         "placeholder=", "label=", "testid=",
+                         "title=", "alt=")
+    has_selector = any(p in text.lower() for p in selector_prefixes) \
+        or text.lstrip().startswith(("//", "(/", "#", ".", "["))
+
+    if has_selector:
+        # 仅做装饰性中文引号 → 空格，保留 ASCII " ' `
+        quote_chars = "\u201c\u201d\u2018\u2019\u300a\u300b\u300c\u300d\u300e\u300f\u3010\u3011"
+    else:
+        quote_chars = "\u201c\u201d\u2018\u2019\u300a\u300b\u300c\u300d\u300e\u300f\u3010\u3011\"'`"
     out = []
     for ch in text:
         if ch in quote_chars:

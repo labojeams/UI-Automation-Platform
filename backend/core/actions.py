@@ -157,6 +157,63 @@ class ActionExecutor:
                     raise e1
         return True, f"已点击 {a['target']}"
 
+    def _do_click_until(self, a):
+        """点击 target，等 value 描述的元素出现；若超时则重试点击。
+
+        action 结构::
+            {"action":"click_until", "target":"价格明细", "value":"价格明细 标题",
+             "extra":{"max_retries":3, "per_wait":5000}}
+
+        约定：
+        - target  ：要点击的元素描述
+        - value   ：点击后期望出现的元素描述（同 wait_for 的 target 语法）
+        - max_retries ：最大重试次数（默认 3）
+        - per_wait    ：每次点击后等待目标出现的毫秒数（默认 self.timeout）
+        """
+        target = a.get("target")
+        wait_target = a.get("value")
+        if not target or not wait_target:
+            return False, "click_until 需要 target 与 value（期望出现的元素）"
+
+        max_retries = int(a.get("max_retries") or a.get("extra", {}).get("max_retries") or 3)
+        per_wait = int(a.get("per_wait") or a.get("extra", {}).get("per_wait") or self.timeout)
+
+        last_err = None
+        for attempt in range(1, max_retries + 1):
+            # 1. 点击
+            try:
+                el = self.locator.smart_find(target)
+                try:
+                    el.click(timeout=self.timeout)
+                except Exception:
+                    try:
+                        el.click(timeout=self.timeout, force=True)
+                    except Exception:
+                        el.evaluate("el => el.click()")
+            except Exception as e:
+                last_err = f"第{attempt}次点击失败: {e}"
+                continue
+
+            # 2. 等待目标出现
+            try:
+                candidates, _ = self.locator.build_candidates(wait_target)
+                per_per = max(800, int(per_wait / max(1, len(candidates))))
+                appeared = False
+                for c in candidates:
+                    try:
+                        c.first.wait_for(state="visible", timeout=per_per)
+                        appeared = True
+                        break
+                    except Exception:
+                        continue
+                if appeared:
+                    return True, f"已点击「{target}」，第{attempt}次出现「{wait_target}」"
+                last_err = f"第{attempt}次等待「{wait_target}」超时"
+            except Exception as e:
+                last_err = f"第{attempt}次等待异常: {e}"
+
+        return False, f"click_until 失败：{last_err}（共重试 {max_retries} 次）"
+
     def _do_dblclick(self, a):
         el = self.locator.smart_find(a["target"])
         try:

@@ -148,12 +148,36 @@ async function runCase(caseId) {
   } catch (e) { alert("启动运行失败：" + e.message); }
 }
 
+// ---------- 停止当前运行 ----------
+async function stopRun() {
+  const runId = state.currentRunId;
+  if (!runId) return;
+  if (!confirm("确定要停止当前运行吗？已执行的步骤会保留，未执行的步骤将标记为已取消。")) return;
+  const btn = $("#btn-stop-run");
+  if (btn) { btn.disabled = true; btn.textContent = "停止中..."; }
+  try {
+    await api(`/api/runs/${runId}/cancel`, { method: "POST" });
+  } catch (e) {
+    alert("发送停止信号失败：" + e.message);
+    if (btn) { btn.disabled = false; btn.textContent = "⏹ 停止"; }
+  }
+}
+
+function showStopBtn(visible) {
+  const btn = $("#btn-stop-run");
+  if (!btn) return;
+  btn.classList.toggle("hidden", !visible);
+  btn.disabled = false;
+  btn.textContent = "⏹ 停止";
+}
+
 function startPolling(runId) {
   state.currentRunId = runId;
   $("#run-status").className = "badge running";
   $("#run-status").textContent = "执行中";
   $("#run-logs").innerHTML = "";
   $("#run-summary").innerHTML = `<div style="color:var(--text-dim)">run_id: ${runId}</div>`;
+  showStopBtn(true);
   startLiveView(runId);
   if (state.pollTimer) clearInterval(state.pollTimer);
   state.pollTimer = setInterval(async () => {
@@ -163,8 +187,12 @@ function startPolling(runId) {
       if (r.status !== "running") {
         clearInterval(state.pollTimer);
         state.pollTimer = null;
-        $("#run-status").className = `badge ${r.status === "done" ? "done" : "error"}`;
-        $("#run-status").textContent = r.status === "done" ? "完成" : "异常";
+        // 状态映射：done=完成，cancelled=已停止，其它=异常
+        const map = { done: ["done", "完成"], cancelled: ["cancelled", "已停止"] };
+        const [cls, label] = map[r.status] || ["error", "异常"];
+        $("#run-status").className = `badge ${cls}`;
+        $("#run-status").textContent = label;
+        showStopBtn(false);
         renderSummary(r.summary);
         stopLiveView();
         // 刷新用例集列表（展示实际结果）
@@ -516,6 +544,9 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#btn-save-suite").addEventListener("click", saveSuite);
   $("#btn-test-parse").addEventListener("click", testParse);
   $("#btn-add-case").addEventListener("click", () => $("#case-list-edit").appendChild(buildCaseBlock()));
+  // 停止运行按钮
+  const stopBtn = $("#btn-stop-run");
+  if (stopBtn) stopBtn.addEventListener("click", stopRun);
 
   // 关闭按钮（仅通过 × / 取消按钮关闭，点击弹窗外遮罩不关闭）
   $$("[data-close]").forEach(el => el.addEventListener("click", () => hideModal(el.dataset.close)));

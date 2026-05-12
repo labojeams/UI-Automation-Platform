@@ -1,4 +1,4 @@
-/* ====== 星空黑主题 ====== */
+﻿/* ====== 鏄熺┖榛戜富棰?====== */
 :root {
   --bg: #0a0e27;
   --bg-2: #11173a;
@@ -30,7 +30,7 @@ body {
   overflow: hidden;
 }
 
-/* ====== 顶栏 ====== */
+/* ====== 椤舵爮 ====== */
 .topbar {
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@ body {
 .subtitle { color: var(--text-dim); font-size: 12px; }
 .actions { display: flex; gap: 8px; }
 
-/* ====== 按钮 ====== */
+/* ====== 鎸夐挳 ====== */
 .btn {
   background: var(--bg-3);
   color: var(--text);
@@ -79,7 +79,7 @@ body {
 }
 .btn-icon:hover { color: var(--red); }
 
-/* ====== 三栏布局 ====== */
+/* ====== 涓夋爮甯冨眬 ====== */
 .layout {
   display: grid;
   grid-template-columns: 280px 1fr 380px;
@@ -97,7 +97,7 @@ body {
 }
 .section-title { margin: 0 0 10px; font-size: 13px; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; }
 
-/* ====== 用例集列表 ====== */
+/* ====== 鐢ㄤ緥闆嗗垪琛?====== */
 .suite-list { display: flex; flex-direction: column; gap: 6px; }
 .suite-item {
   padding: 10px 12px;
@@ -120,7 +120,7 @@ body {
   color: var(--cyan);
 }
 
-/* ====== 用例集详情 ====== */
+/* ====== 鐢ㄤ緥闆嗚鎯?====== */
 .suite-detail h2 { margin: 0 0 4px; font-size: 18px; }
 .detail-meta { color: var(--text-dim); font-size: 12px; margin-bottom: 14px; }
 .detail-actions { display: flex; gap: 8px; margin-bottom: 14px; }
@@ -170,7 +170,7 @@ body {
 .status-tag.skipped { background: rgba(255, 201, 74, 0.15); color: var(--yellow); }
 .actual { color: var(--text-dim); white-space: pre-wrap; }
 
-/* ====== 执行面板 ====== */
+/* ====== 鎵ц闈㈡澘 ====== */
 .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .badge {
   padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;
@@ -215,7 +215,7 @@ body {
 .log-line.info { color: var(--text); }
 .log-time { color: var(--text-dim); margin-right: 6px; }
 
-/* ====== 浏览器画面 ====== */
+/* ====== 娴忚鍣ㄧ敾闈?====== */
 .live-view {
   margin-bottom: 10px;
   border: 1px solid var(--border);
@@ -271,7 +271,7 @@ body {
 .live-placeholder .tip { font-size: 12px; }
 @keyframes ring-spin { to { transform: rotate(360deg); } }
 
-/* ====== 弹窗 ====== */
+/* ====== 寮圭獥 ====== */
 .modal {
   position: fixed; inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -316,7 +316,7 @@ body {
 .row { display: flex; gap: 8px; align-items: center; }
 .row.between { justify-content: space-between; }
 
-/* ====== 用例编辑器 ====== */
+/* ====== 鐢ㄤ緥缂栬緫鍣?====== */
 .case-editor { margin-top: 12px; border-top: 1px dashed var(--border); padding-top: 10px; }
 .case-block {
   background: var(--bg);
@@ -346,8 +346,15 @@ body {
   font-size: 14px;
 }
 
-/* 滚动条 */
+/* 婊氬姩鏉?*/
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* ========== \u5173\u95ed/\u505c\u6b62\u6309\u94ae\u4e0e\u53d6\u6d88\u72b6\u6001 ========== */
+.hidden { display: none !important; }
+.btn.danger { background: linear-gradient(135deg, #f43f5e, #e11d48); color: #fff; border: none; }
+.btn.danger:hover { filter: brightness(1.1); box-shadow: 0 4px 14px rgba(244,63,94,.35); }
+.badge.cancelled { background: rgba(244,63,94,.15); color: #fb7185; border: 1px solid rgba(244,63,94,.45); }
+

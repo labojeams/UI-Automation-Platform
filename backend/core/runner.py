@@ -38,6 +38,8 @@ def _make_state(scope: str, target_name: str) -> Dict[str, Any]:
         "summary": None,
         "started_at": int(time.time() * 1000),
         "finished_at": None,
+        # 取消信号（不进数据库，仅内存态）
+        "cancel_event": threading.Event(),
     }
 
 
@@ -104,13 +106,18 @@ def _clear_frames(run_id: str):
 
 
 # ---------------- 持久化 ----------------
+def _public_view(state: Dict[str, Any]) -> Dict[str, Any]:
+    """返回可 JSON 序列化的 state 副本：剔除内存对象（cancel_event 等）。"""
+    return {k: v for k, v in state.items() if k != "cancel_event"}
+
+
 def _save_report(state):
     """保留 JSON 报告文件作为备份（DB 是主存储）。"""
     os.makedirs(REPORTS_DIR, exist_ok=True)
     path = os.path.join(REPORTS_DIR, f"{state['id']}.json")
     try:
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(state, f, ensure_ascii=False, indent=2)
+            json.dump(_public_view(state), f, ensure_ascii=False, indent=2)
     except Exception as e:
         print(f"[warn] save report json failed: {e}")
 
@@ -126,7 +133,7 @@ def _persist_case_results(state):
 def _persist_run_to_db(state):
     """运行结束后把 run / run_logs / step_results 写入数据库。"""
     try:
-        storage.save_run(state)
+        storage.save_run(_public_view(state))
     except Exception as e:
         print(f"[warn] save run to db failed: {e}")
 
@@ -147,10 +154,12 @@ def run_suite_async(suite_id: str) -> Optional[Dict[str, Any]]:
         try:
             ex = SuiteExecutor(cfg["browser"], cfg["llm"],
                                logger=_logger(state),
-                               frame_callback=frame_cb)
+                               frame_callback=frame_cb,
+                               cancel_event=state["cancel_event"])
             summary = ex.run_suite(suite)
             state["summary"] = summary
-            state["status"] = "done"
+            # 如果是被取消的，状态置为 cancelled，方便前端展示
+            state["status"] = "cancelled" if state["cancel_event"].is_set() else "done"
         except Exception as e:
             state["status"] = "error"
             state["logs"].append({"ts": int(time.time()*1000), "level": "error", "msg": str(e)})
@@ -180,7 +189,8 @@ def run_case_async(case_id: str) -> Optional[Dict[str, Any]]:
         try:
             ex = SuiteExecutor(cfg["browser"], cfg["llm"],
                                logger=_logger(state),
-                               frame_callback=frame_cb)
+                               frame_callback=frame_cb,
+                               cancel_event=state["cancel_event"])
             summary = ex.run_case(case, suite)
             summary["suite"] = {"id": suite["id"], "name": suite["name"],
                                  "base_url": suite.get("base_url", ""),
@@ -189,7 +199,7 @@ def run_case_async(case_id: str) -> Optional[Dict[str, Any]]:
                                  "cases": [c if c["id"] != case["id"] else summary["case"]
                                            for c in suite.get("cases", [])]}
             state["summary"] = summary
-            state["status"] = "done"
+            state["status"] = "cancelled" if state["cancel_event"].is_set() else "done"
         except Exception as e:
             state["status"] = "error"
             state["logs"].append({"ts": int(time.time()*1000), "level": "error", "msg": str(e)})
@@ -204,11 +214,36 @@ def run_case_async(case_id: str) -> Optional[Dict[str, Any]]:
     return state
 
 
+def cancel_run(run_id: str) -> bool:
+    """请求停止指定运行：设置 cancel_event。
+
+    工作线程会在每步循环开头检测到信号并主动收尾。
+    返回 True 表示信号已发送（已找到该 run 且仍在运行）。
+    """
+    with _lock:
+        state = _runs.get(run_id)
+    if not state:
+        return False
+    ev = state.get("cancel_event")
+    if not ev:
+        return False
+    if state.get("status") != "running":
+        # 已结束，无需取消
+        return False
+    ev.set()
+    state["logs"].append({
+        "ts": int(time.time() * 1000),
+        "level": "warn",
+        "msg": "⏹ 用户请求停止，将在当前步骤完成后中断"
+    })
+    return True
+
+
 def get_run(run_id: str) -> Optional[Dict[str, Any]]:
     with _lock:
         state = _runs.get(run_id)
     if state:
-        return state
+        return _public_view(state)
     # 内存没有则查 DB（历史回看）
     return storage.get_run_db(run_id)
 
@@ -217,7 +252,7 @@ def list_runs():
     """运行列表：合并内存中正在运行/最近完成 + DB 历史。"""
     with _lock:
         live = [
-            {k: v for k, v in r.items() if k != "logs"}
+            {k: v for k, v in r.items() if k not in ("logs", "cancel_event")}
             for r in _runs.values()
         ]
     live_ids = {r["id"] for r in live}

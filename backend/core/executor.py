@@ -31,14 +31,20 @@ class SuiteExecutor:
 
     def __init__(self, browser_cfg: Dict[str, Any], llm_cfg: Dict[str, Any],
                  logger: Optional[LogFn] = None,
-                 frame_callback: Optional[FrameFn] = None):
+                 frame_callback: Optional[FrameFn] = None,
+                 cancel_event: Optional[threading.Event] = None):
         self.browser_cfg = browser_cfg or {}
         self.llm = LLMParser(llm_cfg or {})
         self.log = logger or (lambda lvl, msg: print(f"[{lvl}] {msg}"))
         self.frame_cb = frame_callback
+        # 取消信号：由 runner 传入；执行过程每步检测
+        self.cancel_event = cancel_event
         self._current_holder = None
         self._frame_stop = None
         self._frame_thread = None
+
+    def _is_cancelled(self) -> bool:
+        return bool(self.cancel_event and self.cancel_event.is_set())
 
     # ---------------- 主入口 ----------------
     def run_suite(self, suite: Dict[str, Any]) -> Dict[str, Any]:
@@ -61,6 +67,16 @@ class SuiteExecutor:
             browser = launcher.launch(headless=headless)
             try:
                 for case in suite.get("cases", []):
+                    # 用例间检查取消信号：剩余用例不再执行
+                    if self._is_cancelled():
+                        self.log("warn", f"⏹ 收到停止信号，跳过剩余用例")
+                        case["status"] = "skipped"
+                        for st in case.get("steps", []):
+                            if not st.get("status"):
+                                st["status"] = "skipped"
+                                st["actual"] = "已取消"
+                        continue
+
                     context = browser.new_context(
                         viewport=self.browser_cfg.get("viewport") or {"width": 1280, "height": 800}
                     )
@@ -171,6 +187,17 @@ class SuiteExecutor:
 
         case_pass = True
         for idx, step in enumerate(case.get("steps", []), start=1):
+            # 步骤级取消检查：用户点了停止 → 当前用例后续步骤标记 skipped
+            if self._is_cancelled():
+                self.log("warn", f"⏹ 已收到停止信号，跳过步骤 {idx} 及之后")
+                step["status"] = "skipped"
+                step["actual"] = "已取消"
+                for rest in case.get("steps", [])[idx:]:
+                    rest["status"] = "skipped"
+                    rest["actual"] = "已取消"
+                case_pass = False
+                break
+
             desc = step.get("description", "").strip()
             expected = step.get("expected", "")
             self.log("info", f"步骤 {idx}: {desc} | 预期: {expected or '-'}")

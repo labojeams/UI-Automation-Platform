@@ -159,6 +159,16 @@ def api_get_run(run_id):
     return jsonify(state)
 
 
+@app.route("/api/runs/<run_id>/cancel", methods=["POST"])
+def api_cancel_run(run_id):
+    """请求停止运行：设置 cancel_event，工作线程在下一个步骤循环检查点退出。"""
+    ok = runner.cancel_run(run_id)
+    if not ok:
+        # 可能 run_id 不存在，或已经结束
+        return jsonify({"ok": False, "msg": "运行不存在或已结束"}), 404
+    return jsonify({"ok": True, "msg": "停止信号已发送"})
+
+
 @app.route("/api/runs", methods=["GET"])
 def api_list_runs():
     return jsonify(runner.list_runs())

@@ -1,0 +1,972 @@
+{
+  "id": "run_1778588714_cf2f68",
+  "scope": "case",
+  "target_name": "登录",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1778588715521,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1778588715656,
+      "level": "info",
+      "msg": "-- 用例：登录 --"
+    },
+    {
+      "ts": 1778588717096,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1778588717485,
+      "level": "info",
+      "msg": "步骤 1: 点击“密码登录” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588717495,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}"
+    },
+    {
+      "ts": 1778588717608,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「密码登录」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588717900,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step1_20260512_202517.png"
+    },
+    {
+      "ts": 1778588719943,
+      "level": "info",
+      "msg": "步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778588719943,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1778588720027,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588720115,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step2_20260512_202520.png"
+    },
+    {
+      "ts": 1778588722161,
+      "level": "info",
+      "msg": "步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1778588722161,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1778588722245,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588722338,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step3_20260512_202522.png"
+    },
+    {
+      "ts": 1778588724392,
+      "level": "info",
+      "msg": "步骤 4: 点击“登录”按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588724393,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778588724546,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    },
+    {
+      "ts": 1778588726596,
+      "level": "info",
+      "msg": "步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778588726597,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778588741742,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n"
+    },
+    {
+      "ts": 1778588741831,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step5_20260512_202541.png"
+    },
+    {
+      "ts": 1778588743876,
+      "level": "info",
+      "msg": "步骤 6: 点击“在线销售” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588743876,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}"
+    },
+    {
+      "ts": 1778588743976,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「在线销售」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588744066,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step6_20260512_202543.png"
+    },
+    {
+      "ts": 1778588746108,
+      "level": "info",
+      "msg": "步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778588746108,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778588761291,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"关于我们\").first to be visible\n"
+    },
+    {
+      "ts": 1778588761381,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step7_20260512_202601.png"
+    },
+    {
+      "ts": 1778588763425,
+      "level": "info",
+      "msg": "步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588763425,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}"
+    },
+    {
+      "ts": 1778588763490,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588763582,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step8_20260512_202603.png"
+    },
+    {
+      "ts": 1778588765608,
+      "level": "info",
+      "msg": "步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗"
+    },
+    {
+      "ts": 1778588765608,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778588780789,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「选择商机」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"选择商机\").first to be visible\n"
+    },
+    {
+      "ts": 1778588780878,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step9_20260512_202620.png"
+    },
+    {
+      "ts": 1778588782921,
+      "level": "info",
+      "msg": "步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778588782921,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}"
+    },
+    {
+      "ts": 1778588782989,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「placeholder=请输入商机ID、客户姓名或客户电话」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588783079,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step10_20260512_202622.png"
+    },
+    {
+      "ts": 1778588785123,
+      "level": "info",
+      "msg": "步骤 11: 点击 搜索 按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588785124,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778588785206,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「搜索 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588785297,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step11_20260512_202625.png"
+    },
+    {
+      "ts": 1778588787341,
+      "level": "info",
+      "msg": "步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”"
+    },
+    {
+      "ts": 1778588787341,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778588802505,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「SHJ成都分公司」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"SHJ成都分公司\").first to be visible\n"
+    },
+    {
+      "ts": 1778588802599,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step12_20260512_202642.png"
+    },
+    {
+      "ts": 1778588804638,
+      "level": "info",
+      "msg": "步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司"
+    },
+    {
+      "ts": 1778588804638,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}"
+    },
+    {
+      "ts": 1778588804706,
+      "level": "error",
+      "msg": "  -> scroll_to 执行失败: 未找到精确匹配的元素：「text=SHJ成都分公司」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588804801,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step13_20260512_202644.png"
+    },
+    {
+      "ts": 1778588806838,
+      "level": "info",
+      "msg": "步骤 14: 点击 新增接待 在 SHJ成都分公司 的 卡片 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588806838,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]', 'value': None}"
+    },
+    {
+      "ts": 1778588806906,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588807001,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step14_20260512_202646.png"
+    },
+    {
+      "ts": 1778588809038,
+      "level": "info",
+      "msg": "步骤 15: 点击 开始接待 按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588809038,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '开始接待 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778588809123,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「开始接待 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588809215,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step15_20260512_202649.png"
+    },
+    {
+      "ts": 1778588811257,
+      "level": "info",
+      "msg": "步骤 16: 点击 在线商城 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588811257,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '在线商城', 'value': None}"
+    },
+    {
+      "ts": 1778588811356,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「在线商城」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588811446,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step16_20260512_202651.png"
+    },
+    {
+      "ts": 1778588813489,
+      "level": "info",
+      "msg": "步骤 17: 点击搜索框，输入 轻奢装3.0-加锁 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778588813489,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '搜索框', 'value': '轻奢装3.0-加锁'}"
+    },
+    {
+      "ts": 1778588813556,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「搜索框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588813652,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step17_20260512_202653.png"
+    },
+    {
+      "ts": 1778588815686,
+      "level": "info",
+      "msg": "步骤 18: 点击 搜索 按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588815686,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778588815773,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「搜索 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588815862,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step18_20260512_202655.png"
+    },
+    {
+      "ts": 1778588817906,
+      "level": "info",
+      "msg": "步骤 19: 点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"] | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588817906,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]', 'value': None}"
+    },
+    {
+      "ts": 1778588817973,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588818062,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step19_20260512_202657.png"
+    },
+    {
+      "ts": 1778588820110,
+      "level": "info",
+      "msg": "步骤 20: 点击 报价类型 下拉框 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588820110,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '报价类型 下拉框', 'value': None}"
+    },
+    {
+      "ts": 1778588820189,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「报价类型 下拉框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588820285,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step20_20260512_202700.png"
+    },
+    {
+      "ts": 1778588822337,
+      "level": "info",
+      "msg": "步骤 21: 点击 预算 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588822337,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '预算', 'value': None}"
+    },
+    {
+      "ts": 1778588822420,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「预算」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588822511,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step21_20260512_202702.png"
+    },
+    {
+      "ts": 1778588824553,
+      "level": "info",
+      "msg": "步骤 22: 点击 报价面积 输入框，输入110 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778588824553,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '报价面积 输入框', 'value': '110'}"
+    },
+    {
+      "ts": 1778588824637,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「报价面积 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588824724,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step22_20260512_202704.png"
+    },
+    {
+      "ts": 1778588826771,
+      "level": "info",
+      "msg": "步骤 23: 点击 卧室个数 输入框，输入1 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778588826771,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '卧室个数 输入框', 'value': '1'}"
+    },
+    {
+      "ts": 1778588826837,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「卧室个数 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588826924,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step23_20260512_202706.png"
+    },
+    {
+      "ts": 1778588828953,
+      "level": "info",
+      "msg": "步骤 24: 点击 卫生间个数 输入框，输入1 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778588828953,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '卫生间个数 输入框', 'value': '1'}"
+    },
+    {
+      "ts": 1778588829020,
+      "level": "error",
+      "msg": "  -> fill 执行失败: 未找到精确匹配的元素：「卫生间个数 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588829109,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step24_20260512_202709.png"
+    },
+    {
+      "ts": 1778588831155,
+      "level": "info",
+      "msg": "步骤 25: 点击 卫生间 下拉框 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588831155,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '卫生间 下拉框', 'value': None}"
+    },
+    {
+      "ts": 1778588831238,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「卫生间 下拉框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588831336,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step25_20260512_202711.png"
+    },
+    {
+      "ts": 1778588833387,
+      "level": "info",
+      "msg": "步骤 26: 点击 普配 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588833387,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '普配', 'value': None}"
+    },
+    {
+      "ts": 1778588833470,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「普配」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588833562,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step26_20260512_202713.png"
+    },
+    {
+      "ts": 1778588835605,
+      "level": "info",
+      "msg": "步骤 27: 点击 价格明细，直到 css=*:has-text(\"工程总造价\") 出现 最多 5 次 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778588835605,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '价格明细,直到 css=*:has-text(\"工程总造价\") 出现 最多 5 次', 'value': None}"
+    },
+    {
+      "ts": 1778588835688,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「价格明细,直到 css=*:has-text(\"工程总造价\") 出现 最多 5 次」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778588835778,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step27_20260512_202715.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_8e66ef7b00",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 123599,
+    "case": {
+      "id": "case_8e66ef7b00",
+      "name": "登录",
+      "precondition": "",
+      "status": "fail",
+      "steps": [
+        {
+          "id": "step_54f0cd2f20",
+          "description": "点击“密码登录”",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「密码登录」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_b99c7d3369",
+          "description": "点击“账号”输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_42d3a26a4e",
+          "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_a07fcda327",
+          "description": "点击“登录”按钮",
+          "expected": "点击成功",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_1b87bc9c59",
+          "description": "等待“在线销售”出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_5b36d63b53",
+          "description": "点击“在线销售”",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「在线销售」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_7b5349cceb",
+          "description": "等待”关于我们“出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"关于我们\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_9be412b929",
+          "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_bddbe3021b",
+          "description": "等待”选择商机“出现",
+          "expected": "页面出现”选择商机“弹窗",
+          "actual": "wait_for 执行失败: 等待「选择商机」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"选择商机\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_0766488773",
+          "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「placeholder=请输入商机ID、客户姓名或客户电话」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_6983acb226",
+          "description": "点击 搜索 按钮",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「搜索 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_43a12c2221",
+          "description": "等待 SHJ成都分公司 出现",
+          "expected": "页面出现“SHJ成都分公司 的比伯”",
+          "actual": "wait_for 执行失败: 等待「SHJ成都分公司」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"SHJ成都分公司\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_cc886958bf",
+          "description": "滚动到 text=SHJ成都分公司",
+          "expected": "出现SHJ成都分公司",
+          "actual": "scroll_to 执行失败: 未找到精确匹配的元素：「text=SHJ成都分公司」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_f37a55cd03",
+          "description": "点击 新增接待 在 SHJ成都分公司 的 卡片",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_e73e3b4a67",
+          "description": "点击 开始接待 按钮",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「开始接待 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_61bc38d7e3",
+          "description": "点击 在线商城",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「在线商城」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_f8c230baff",
+          "description": "点击搜索框，输入 轻奢装3.0-加锁",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「搜索框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_c9aa7759e8",
+          "description": "点击 搜索 按钮",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「搜索 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_01fcd9713a",
+          "description": "点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_e4418d0a30",
+          "description": "点击 报价类型 下拉框",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「报价类型 下拉框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_5846383fef",
+          "description": "点击 预算",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「预算」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_342c90ff16",
+          "description": "点击 报价面积 输入框，输入110",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「报价面积 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_19ba8291ca",
+          "description": "点击 卧室个数 输入框，输入1",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「卧室个数 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_6053b4ec30",
+          "description": "点击 卫生间个数 输入框，输入1",
+          "expected": "输入成功",
+          "actual": "fill 执行失败: 未找到精确匹配的元素：「卫生间个数 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_778d0dc765",
+          "description": "点击 卫生间 下拉框",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「卫生间 下拉框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_ed334ec235",
+          "description": "点击 普配",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「普配」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_b7048dd0f9",
+          "description": "点击 价格明细，直到 css=*:has-text(\"工程总造价\") 出现 最多 5 次",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「价格明细,直到 css=*:has-text(\"工程总造价\") 出现 最多 5 次」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        }
+      ]
+    },
+    "suite": {
+      "id": "suite_ea8b897c67",
+      "name": "下单（整装）",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "",
+      "tags": [
+        "login"
+      ],
+      "cases": [
+        {
+          "id": "case_8e66ef7b00",
+          "name": "登录",
+          "precondition": "",
+          "status": "fail",
+          "steps": [
+            {
+              "id": "step_54f0cd2f20",
+              "description": "点击“密码登录”",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「密码登录」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_b99c7d3369",
+              "description": "点击“账号”输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「账号 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_42d3a26a4e",
+              "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「密码 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_a07fcda327",
+              "description": "点击“登录”按钮",
+              "expected": "点击成功",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_1b87bc9c59",
+              "description": "等待“在线销售”出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_5b36d63b53",
+              "description": "点击“在线销售”",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「在线销售」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_7b5349cceb",
+              "description": "等待”关于我们“出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"关于我们\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_9be412b929",
+              "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_bddbe3021b",
+              "description": "等待”选择商机“出现",
+              "expected": "页面出现”选择商机“弹窗",
+              "actual": "wait_for 执行失败: 等待「选择商机」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"选择商机\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_0766488773",
+              "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「placeholder=请输入商机ID、客户姓名或客户电话」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_6983acb226",
+              "description": "点击 搜索 按钮",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「搜索 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_43a12c2221",
+              "description": "等待 SHJ成都分公司 出现",
+              "expected": "页面出现“SHJ成都分公司 的比伯”",
+              "actual": "wait_for 执行失败: 等待「SHJ成都分公司」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"SHJ成都分公司\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_cc886958bf",
+              "description": "滚动到 text=SHJ成都分公司",
+              "expected": "出现SHJ成都分公司",
+              "actual": "scroll_to 执行失败: 未找到精确匹配的元素：「text=SHJ成都分公司」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_f37a55cd03",
+              "description": "点击 新增接待 在 SHJ成都分公司 的 卡片",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_e73e3b4a67",
+              "description": "点击 开始接待 按钮",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「开始接待 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_61bc38d7e3",
+              "description": "点击 在线商城",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「在线商城」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_f8c230baff",
+              "description": "点击搜索框，输入 轻奢装3.0-加锁",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「搜索框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_c9aa7759e8",
+              "description": "点击 搜索 按钮",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「搜索 按钮」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_01fcd9713a",
+              "description": "点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_e4418d0a30",
+              "description": "点击 报价类型 下拉框",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「报价类型 下拉框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_5846383fef",
+              "description": "点击 预算",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「预算」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_342c90ff16",
+              "description": "点击 报价面积 输入框，输入110",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「报价面积 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_19ba8291ca",
+              "description": "点击 卧室个数 输入框，输入1",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「卧室个数 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_6053b4ec30",
+              "description": "点击 卫生间个数 输入框，输入1",
+              "expected": "输入成功",
+              "actual": "fill 执行失败: 未找到精确匹配的元素：「卫生间个数 输入框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_778d0dc765",
+              "description": "点击 卫生间 下拉框",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「卫生间 下拉框」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_ed334ec235",
+              "description": "点击 普配",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「普配」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_b7048dd0f9",
+              "description": "点击 价格明细，直到 css=*:has-text(\"工程总造价\") 出现 最多 5 次",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「价格明细,直到 css=*:has-text(\"工程总造价\") 出现 最多 5 次」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1778588714256,
+  "finished_at": 1778588837941
+}
