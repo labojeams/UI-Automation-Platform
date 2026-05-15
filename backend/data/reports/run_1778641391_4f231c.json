@@ -1,0 +1,929 @@
+{
+  "id": "run_1778641391_4f231c",
+  "scope": "case",
+  "target_name": "登录",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1778641392111,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1778641392231,
+      "level": "info",
+      "msg": "-- 用例：登录 --"
+    },
+    {
+      "ts": 1778641395425,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1778641395517,
+      "level": "info",
+      "msg": "步骤 1: 点击“密码登录” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641395517,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}"
+    },
+    {
+      "ts": 1778641395722,
+      "level": "info",
+      "msg": "  -> 已点击 密码登录"
+    },
+    {
+      "ts": 1778641397769,
+      "level": "info",
+      "msg": "步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641397769,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1778641397888,
+      "level": "info",
+      "msg": "  -> 在 账号 输入框 输入了「8040094」"
+    },
+    {
+      "ts": 1778641399940,
+      "level": "info",
+      "msg": "步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641399941,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1778641400056,
+      "level": "info",
+      "msg": "  -> 在 密码 输入框 输入了「SDLCOSO2.0shj」"
+    },
+    {
+      "ts": 1778641402102,
+      "level": "info",
+      "msg": "步骤 4: 点击“登录”按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641402103,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778641402218,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    },
+    {
+      "ts": 1778641404254,
+      "level": "info",
+      "msg": "步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778641404254,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778641405470,
+      "level": "info",
+      "msg": "  -> 在线销售 已 visible"
+    },
+    {
+      "ts": 1778641407509,
+      "level": "info",
+      "msg": "步骤 6: 点击“在线销售” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641407509,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}"
+    },
+    {
+      "ts": 1778641407656,
+      "level": "info",
+      "msg": "  -> 已点击 在线销售"
+    },
+    {
+      "ts": 1778641410455,
+      "level": "info",
+      "msg": "步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778641410456,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778641410772,
+      "level": "info",
+      "msg": "  -> 关于我们 已 visible"
+    },
+    {
+      "ts": 1778641412820,
+      "level": "info",
+      "msg": "步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641412820,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}"
+    },
+    {
+      "ts": 1778641413021,
+      "level": "info",
+      "msg": "  -> 已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img"
+    },
+    {
+      "ts": 1778641415092,
+      "level": "info",
+      "msg": "步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗"
+    },
+    {
+      "ts": 1778641415092,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778641415187,
+      "level": "info",
+      "msg": "  -> 选择商机 已 visible"
+    },
+    {
+      "ts": 1778641417234,
+      "level": "info",
+      "msg": "步骤 10: 点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641417234,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': 'placeholder=请输入商机ID、客户姓名或客户电话', 'value': '比伯'}"
+    },
+    {
+      "ts": 1778641417372,
+      "level": "info",
+      "msg": "  -> 在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」"
+    },
+    {
+      "ts": 1778641419435,
+      "level": "info",
+      "msg": "步骤 11: 点击 搜索 按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641419435,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778641419606,
+      "level": "info",
+      "msg": "  -> 已点击 搜索 按钮"
+    },
+    {
+      "ts": 1778641421650,
+      "level": "info",
+      "msg": "步骤 12: 等待 SHJ成都分公司 出现 | 预期: 页面出现“SHJ成都分公司 的比伯”"
+    },
+    {
+      "ts": 1778641421650,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': 'SHJ成都分公司', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778641421738,
+      "level": "info",
+      "msg": "  -> SHJ成都分公司 已 visible"
+    },
+    {
+      "ts": 1778641423785,
+      "level": "info",
+      "msg": "步骤 13: 滚动到 text=SHJ成都分公司 | 预期: 出现SHJ成都分公司"
+    },
+    {
+      "ts": 1778641423785,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'scroll_to', 'target': 'text=SHJ成都分公司', 'value': None}"
+    },
+    {
+      "ts": 1778641423921,
+      "level": "info",
+      "msg": "  -> 已滚动到 text=SHJ成都分公司"
+    },
+    {
+      "ts": 1778641425969,
+      "level": "info",
+      "msg": "步骤 14: 点击 新增接待 在 SHJ成都分公司 的 卡片 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641425969,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]', 'value': None}"
+    },
+    {
+      "ts": 1778641429927,
+      "level": "info",
+      "msg": "  -> 已点击 xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]"
+    },
+    {
+      "ts": 1778641431986,
+      "level": "info",
+      "msg": "步骤 15: 点击 开始接待 按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641431986,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '开始接待 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778641432167,
+      "level": "info",
+      "msg": "  -> 已点击 开始接待 按钮"
+    },
+    {
+      "ts": 1778641434194,
+      "level": "info",
+      "msg": "步骤 16: 点击 在线商城 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641434194,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '在线商城', 'value': None}"
+    },
+    {
+      "ts": 1778641434365,
+      "level": "info",
+      "msg": "  -> 已点击 在线商城"
+    },
+    {
+      "ts": 1778641436414,
+      "level": "info",
+      "msg": "步骤 17: 点击搜索框，输入 轻奢装3.0-加锁 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641436414,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '搜索框', 'value': '轻奢装3.0-加锁'}"
+    },
+    {
+      "ts": 1778641436531,
+      "level": "info",
+      "msg": "  -> 在 搜索框 输入了「轻奢装3.0-加锁」"
+    },
+    {
+      "ts": 1778641438600,
+      "level": "info",
+      "msg": "步骤 18: 点击 搜索 按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641438600,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '搜索 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778641438797,
+      "level": "info",
+      "msg": "  -> 已点击 搜索 按钮"
+    },
+    {
+      "ts": 1778641440890,
+      "level": "info",
+      "msg": "步骤 19: 点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"] | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641440890,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]', 'value': None}"
+    },
+    {
+      "ts": 1778641441231,
+      "level": "info",
+      "msg": "  -> 已点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]"
+    },
+    {
+      "ts": 1778641443274,
+      "level": "info",
+      "msg": "步骤 20: 点击 报价类型 下拉框 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641443274,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '报价类型 下拉框', 'value': None}"
+    },
+    {
+      "ts": 1778641443401,
+      "level": "info",
+      "msg": "  -> 已点击 报价类型 下拉框"
+    },
+    {
+      "ts": 1778641445431,
+      "level": "info",
+      "msg": "步骤 21: 点击 预算 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641445431,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '预算', 'value': None}"
+    },
+    {
+      "ts": 1778641445572,
+      "level": "info",
+      "msg": "  -> 已点击 预算"
+    },
+    {
+      "ts": 1778641447655,
+      "level": "info",
+      "msg": "步骤 22: 点击 报价面积 输入框，输入110 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641447655,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '报价面积 输入框', 'value': '110'}"
+    },
+    {
+      "ts": 1778641447781,
+      "level": "info",
+      "msg": "  -> 在 报价面积 输入框 输入了「110」"
+    },
+    {
+      "ts": 1778641449812,
+      "level": "info",
+      "msg": "步骤 23: 点击 卧室个数 输入框，输入1 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641449813,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '卧室个数 输入框', 'value': '1'}"
+    },
+    {
+      "ts": 1778641449933,
+      "level": "info",
+      "msg": "  -> 在 卧室个数 输入框 输入了「1」"
+    },
+    {
+      "ts": 1778641451983,
+      "level": "info",
+      "msg": "步骤 24: 点击 卫生间个数 输入框，输入1 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641451983,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '卫生间个数 输入框', 'value': '1'}"
+    },
+    {
+      "ts": 1778641452100,
+      "level": "info",
+      "msg": "  -> 在 卫生间个数 输入框 输入了「1」"
+    },
+    {
+      "ts": 1778641454149,
+      "level": "info",
+      "msg": "步骤 25: 点击 卫生间 下拉框 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641454149,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '卫生间 下拉框', 'value': None}"
+    },
+    {
+      "ts": 1778641454284,
+      "level": "info",
+      "msg": "  -> 已点击 卫生间 下拉框"
+    },
+    {
+      "ts": 1778641456333,
+      "level": "info",
+      "msg": "步骤 26: 点击 普配 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641456333,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '普配', 'value': None}"
+    },
+    {
+      "ts": 1778641456544,
+      "level": "info",
+      "msg": "  -> 已点击 普配"
+    },
+    {
+      "ts": 1778641458600,
+      "level": "info",
+      "msg": "步骤 27: 点击 价格明细 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641458600,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '价格明细', 'value': None}"
+    },
+    {
+      "ts": 1778641458722,
+      "level": "info",
+      "msg": "  -> 已点击 价格明细"
+    },
+    {
+      "ts": 1778641460766,
+      "level": "info",
+      "msg": "步骤 28: 休眠10秒 | 预期: -"
+    },
+    {
+      "ts": 1778641461327,
+      "level": "error",
+      "msg": "无法解析该步骤（关键词与LLM均未识别）"
+    },
+    {
+      "ts": 1778641461386,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step28_20260513_110421.png"
+    },
+    {
+      "ts": 1778641461417,
+      "level": "info",
+      "msg": "步骤 29: 等待出现 工程总造价 | 预期: 等待出现 工程总造价"
+    },
+    {
+      "ts": 1778641461840,
+      "level": "error",
+      "msg": "无法解析该步骤（关键词与LLM均未识别）"
+    },
+    {
+      "ts": 1778641461887,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step29_20260513_110421.png"
+    },
+    {
+      "ts": 1778641461914,
+      "level": "info",
+      "msg": "步骤 30: 截图 | 预期: 截图成功"
+    },
+    {
+      "ts": 1778641461915,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'screenshot', 'target': None, 'value': 'screenshot'}"
+    },
+    {
+      "ts": 1778641462032,
+      "level": "info",
+      "msg": "  -> 截图已保存: screenshot_20260513_110421.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_8e66ef7b00",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 73177,
+    "case": {
+      "id": "case_8e66ef7b00",
+      "name": "登录",
+      "precondition": "",
+      "status": "fail",
+      "steps": [
+        {
+          "id": "step_54f0cd2f20",
+          "description": "点击“密码登录”",
+          "expected": "点击成功",
+          "actual": "已点击 密码登录",
+          "status": "pass"
+        },
+        {
+          "id": "step_b99c7d3369",
+          "description": "点击“账号”输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "在 账号 输入框 输入了「8040094」",
+          "status": "pass"
+        },
+        {
+          "id": "step_42d3a26a4e",
+          "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+          "status": "pass"
+        },
+        {
+          "id": "step_a07fcda327",
+          "description": "点击“登录”按钮",
+          "expected": "点击成功",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_1b87bc9c59",
+          "description": "等待“在线销售”出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "在线销售 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_5b36d63b53",
+          "description": "点击“在线销售”",
+          "expected": "点击成功",
+          "actual": "已点击 在线销售",
+          "status": "pass"
+        },
+        {
+          "id": "step_7b5349cceb",
+          "description": "等待”关于我们“出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "关于我们 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_9be412b929",
+          "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+          "expected": "点击成功",
+          "actual": "已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+          "status": "pass"
+        },
+        {
+          "id": "step_bddbe3021b",
+          "description": "等待”选择商机“出现",
+          "expected": "页面出现”选择商机“弹窗",
+          "actual": "选择商机 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_0766488773",
+          "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+          "expected": "输入成功",
+          "actual": "在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」",
+          "status": "pass"
+        },
+        {
+          "id": "step_6983acb226",
+          "description": "点击 搜索 按钮",
+          "expected": "点击成功",
+          "actual": "已点击 搜索 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_43a12c2221",
+          "description": "等待 SHJ成都分公司 出现",
+          "expected": "页面出现“SHJ成都分公司 的比伯”",
+          "actual": "SHJ成都分公司 已 visible",
+          "status": "pass"
+        },
+        {
+          "id": "step_cc886958bf",
+          "description": "滚动到 text=SHJ成都分公司",
+          "expected": "出现SHJ成都分公司",
+          "actual": "已滚动到 text=SHJ成都分公司",
+          "status": "pass"
+        },
+        {
+          "id": "step_f37a55cd03",
+          "description": "点击 新增接待 在 SHJ成都分公司 的 卡片",
+          "expected": "点击成功",
+          "actual": "已点击 xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]",
+          "status": "pass"
+        },
+        {
+          "id": "step_e73e3b4a67",
+          "description": "点击 开始接待 按钮",
+          "expected": "点击成功",
+          "actual": "已点击 开始接待 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_61bc38d7e3",
+          "description": "点击 在线商城",
+          "expected": "点击成功",
+          "actual": "已点击 在线商城",
+          "status": "pass"
+        },
+        {
+          "id": "step_f8c230baff",
+          "description": "点击搜索框，输入 轻奢装3.0-加锁",
+          "expected": "输入成功",
+          "actual": "在 搜索框 输入了「轻奢装3.0-加锁」",
+          "status": "pass"
+        },
+        {
+          "id": "step_c9aa7759e8",
+          "description": "点击 搜索 按钮",
+          "expected": "点击成功",
+          "actual": "已点击 搜索 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_01fcd9713a",
+          "description": "点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+          "expected": "点击成功",
+          "actual": "已点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+          "status": "pass"
+        },
+        {
+          "id": "step_e4418d0a30",
+          "description": "点击 报价类型 下拉框",
+          "expected": "点击成功",
+          "actual": "已点击 报价类型 下拉框",
+          "status": "pass"
+        },
+        {
+          "id": "step_5846383fef",
+          "description": "点击 预算",
+          "expected": "点击成功",
+          "actual": "已点击 预算",
+          "status": "pass"
+        },
+        {
+          "id": "step_342c90ff16",
+          "description": "点击 报价面积 输入框，输入110",
+          "expected": "输入成功",
+          "actual": "在 报价面积 输入框 输入了「110」",
+          "status": "pass"
+        },
+        {
+          "id": "step_19ba8291ca",
+          "description": "点击 卧室个数 输入框，输入1",
+          "expected": "输入成功",
+          "actual": "在 卧室个数 输入框 输入了「1」",
+          "status": "pass"
+        },
+        {
+          "id": "step_6053b4ec30",
+          "description": "点击 卫生间个数 输入框，输入1",
+          "expected": "输入成功",
+          "actual": "在 卫生间个数 输入框 输入了「1」",
+          "status": "pass"
+        },
+        {
+          "id": "step_778d0dc765",
+          "description": "点击 卫生间 下拉框",
+          "expected": "点击成功",
+          "actual": "已点击 卫生间 下拉框",
+          "status": "pass"
+        },
+        {
+          "id": "step_ed334ec235",
+          "description": "点击 普配",
+          "expected": "点击成功",
+          "actual": "已点击 普配",
+          "status": "pass"
+        },
+        {
+          "id": "step_b7048dd0f9",
+          "description": "点击 价格明细",
+          "expected": "点击成功",
+          "actual": "已点击 价格明细",
+          "status": "pass"
+        },
+        {
+          "id": "step_573e33695f",
+          "description": "休眠10秒",
+          "expected": "",
+          "actual": "无法解析该步骤（关键词与LLM均未识别）",
+          "status": "fail"
+        },
+        {
+          "id": "step_ca10f99dd4",
+          "description": "等待出现 工程总造价",
+          "expected": "等待出现 工程总造价",
+          "actual": "无法解析该步骤（关键词与LLM均未识别）",
+          "status": "fail"
+        },
+        {
+          "id": "step_e50d39f200",
+          "description": "截图",
+          "expected": "截图成功",
+          "actual": "截图已保存: screenshot_20260513_110421.png",
+          "status": "pass"
+        }
+      ]
+    },
+    "suite": {
+      "id": "suite_ea8b897c67",
+      "name": "下单（整装）",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "",
+      "tags": [
+        "login"
+      ],
+      "cases": [
+        {
+          "id": "case_8e66ef7b00",
+          "name": "登录",
+          "precondition": "",
+          "status": "fail",
+          "steps": [
+            {
+              "id": "step_54f0cd2f20",
+              "description": "点击“密码登录”",
+              "expected": "点击成功",
+              "actual": "已点击 密码登录",
+              "status": "pass"
+            },
+            {
+              "id": "step_b99c7d3369",
+              "description": "点击“账号”输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "在 账号 输入框 输入了「8040094」",
+              "status": "pass"
+            },
+            {
+              "id": "step_42d3a26a4e",
+              "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+              "status": "pass"
+            },
+            {
+              "id": "step_a07fcda327",
+              "description": "点击“登录”按钮",
+              "expected": "点击成功",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_1b87bc9c59",
+              "description": "等待“在线销售”出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "在线销售 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_5b36d63b53",
+              "description": "点击“在线销售”",
+              "expected": "点击成功",
+              "actual": "已点击 在线销售",
+              "status": "pass"
+            },
+            {
+              "id": "step_7b5349cceb",
+              "description": "等待”关于我们“出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "关于我们 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_9be412b929",
+              "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+              "expected": "点击成功",
+              "actual": "已点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+              "status": "pass"
+            },
+            {
+              "id": "step_bddbe3021b",
+              "description": "等待”选择商机“出现",
+              "expected": "页面出现”选择商机“弹窗",
+              "actual": "选择商机 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_0766488773",
+              "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+              "expected": "输入成功",
+              "actual": "在 placeholder=请输入商机ID、客户姓名或客户电话 输入了「比伯」",
+              "status": "pass"
+            },
+            {
+              "id": "step_6983acb226",
+              "description": "点击 搜索 按钮",
+              "expected": "点击成功",
+              "actual": "已点击 搜索 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_43a12c2221",
+              "description": "等待 SHJ成都分公司 出现",
+              "expected": "页面出现“SHJ成都分公司 的比伯”",
+              "actual": "SHJ成都分公司 已 visible",
+              "status": "pass"
+            },
+            {
+              "id": "step_cc886958bf",
+              "description": "滚动到 text=SHJ成都分公司",
+              "expected": "出现SHJ成都分公司",
+              "actual": "已滚动到 text=SHJ成都分公司",
+              "status": "pass"
+            },
+            {
+              "id": "step_f37a55cd03",
+              "description": "点击 新增接待 在 SHJ成都分公司 的 卡片",
+              "expected": "点击成功",
+              "actual": "已点击 xpath=(//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]][not(.//*[.//*[normalize-space(.)=\"SHJ成都分公司\"] and .//*[normalize-space(.)=\"新增接待\"]])])[1]//*[normalize-space(.)=\"新增接待\"][self::button or self::a or @role=\"button\" or ancestor::button[1] or ancestor::a[1]]",
+              "status": "pass"
+            },
+            {
+              "id": "step_e73e3b4a67",
+              "description": "点击 开始接待 按钮",
+              "expected": "点击成功",
+              "actual": "已点击 开始接待 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_61bc38d7e3",
+              "description": "点击 在线商城",
+              "expected": "点击成功",
+              "actual": "已点击 在线商城",
+              "status": "pass"
+            },
+            {
+              "id": "step_f8c230baff",
+              "description": "点击搜索框，输入 轻奢装3.0-加锁",
+              "expected": "输入成功",
+              "actual": "在 搜索框 输入了「轻奢装3.0-加锁」",
+              "status": "pass"
+            },
+            {
+              "id": "step_c9aa7759e8",
+              "description": "点击 搜索 按钮",
+              "expected": "点击成功",
+              "actual": "已点击 搜索 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_01fcd9713a",
+              "description": "点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+              "expected": "点击成功",
+              "actual": "已点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+              "status": "pass"
+            },
+            {
+              "id": "step_e4418d0a30",
+              "description": "点击 报价类型 下拉框",
+              "expected": "点击成功",
+              "actual": "已点击 报价类型 下拉框",
+              "status": "pass"
+            },
+            {
+              "id": "step_5846383fef",
+              "description": "点击 预算",
+              "expected": "点击成功",
+              "actual": "已点击 预算",
+              "status": "pass"
+            },
+            {
+              "id": "step_342c90ff16",
+              "description": "点击 报价面积 输入框，输入110",
+              "expected": "输入成功",
+              "actual": "在 报价面积 输入框 输入了「110」",
+              "status": "pass"
+            },
+            {
+              "id": "step_19ba8291ca",
+              "description": "点击 卧室个数 输入框，输入1",
+              "expected": "输入成功",
+              "actual": "在 卧室个数 输入框 输入了「1」",
+              "status": "pass"
+            },
+            {
+              "id": "step_6053b4ec30",
+              "description": "点击 卫生间个数 输入框，输入1",
+              "expected": "输入成功",
+              "actual": "在 卫生间个数 输入框 输入了「1」",
+              "status": "pass"
+            },
+            {
+              "id": "step_778d0dc765",
+              "description": "点击 卫生间 下拉框",
+              "expected": "点击成功",
+              "actual": "已点击 卫生间 下拉框",
+              "status": "pass"
+            },
+            {
+              "id": "step_ed334ec235",
+              "description": "点击 普配",
+              "expected": "点击成功",
+              "actual": "已点击 普配",
+              "status": "pass"
+            },
+            {
+              "id": "step_b7048dd0f9",
+              "description": "点击 价格明细",
+              "expected": "点击成功",
+              "actual": "已点击 价格明细",
+              "status": "pass"
+            },
+            {
+              "id": "step_573e33695f",
+              "description": "休眠10秒",
+              "expected": "",
+              "actual": "无法解析该步骤（关键词与LLM均未识别）",
+              "status": "fail"
+            },
+            {
+              "id": "step_ca10f99dd4",
+              "description": "等待出现 工程总造价",
+              "expected": "等待出现 工程总造价",
+              "actual": "无法解析该步骤（关键词与LLM均未识别）",
+              "status": "fail"
+            },
+            {
+              "id": "step_e50d39f200",
+              "description": "截图",
+              "expected": "截图成功",
+              "actual": "截图已保存: screenshot_20260513_110421.png",
+              "status": "pass"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1778641391064,
+  "finished_at": 1778641464241
+}

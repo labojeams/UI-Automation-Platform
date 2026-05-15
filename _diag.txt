@@ -1,0 +1,5 @@
+python_version=3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]
+cwd=C:\Users\ext.lanbo6\PycharmProjects\ui-automation-platform
+flask=ok
+backend.app=ok
+port_5050=free

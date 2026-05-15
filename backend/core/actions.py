@@ -141,21 +141,72 @@ class ActionExecutor:
 
     # ===================== 交互类 =====================
     def _do_click(self, a):
-        el = self.locator.smart_find(a["target"])
+        target = a["target"]
+        # 步骤间页面可能尚未稳定（弹窗渲染、动画过渡），允许 LookupError 时短暂等待重试
+        last_lookup_err = None
+        for retry in range(3):
+            try:
+                el = self.locator.smart_find(target)
+                break
+            except LookupError as e:
+                last_lookup_err = e
+                # 等待页面变化
+                try:
+                    self.page.wait_for_timeout(800)
+                except Exception:
+                    pass
+        else:
+            # 三次都没找到，附带页面 DOM 调试信息
+            dbg = self._dom_debug_for_dialog()
+            raise LookupError(f"{last_lookup_err}\n[DOM 调试] {dbg}")
+
         try:
             el.click(timeout=self.timeout)
         except Exception as e1:
-            # 不可见/被遮挡时，尝试 force 点击；再不行用 JS click
             try:
+                try:
+                    el.scroll_into_view_if_needed(timeout=1500)
+                except Exception:
+                    pass
                 el.click(timeout=self.timeout, force=True)
-                return True, f"已点击 {a['target']}（force）"
+                return True, f"已点击 {target}（force）"
             except Exception:
                 try:
-                    el.evaluate("el => el.click()")
-                    return True, f"已点击 {a['target']}（JS）"
+                    el.evaluate(
+                        "el => { el.scrollIntoView({block:'center'}); "
+                        "el.dispatchEvent(new MouseEvent('click', "
+                        "{bubbles:true, cancelable:true, view:window})); }"
+                    )
+                    return True, f"已点击 {target}（JS dispatch）"
                 except Exception:
                     raise e1
-        return True, f"已点击 {a['target']}"
+        return True, f"已点击 {target}"
+
+    def _dom_debug_for_dialog(self):
+        """收集当前页面 .adm-dialog / [role=dialog] / .modal 等弹窗节点概览，便于排查 selector 不匹配。"""
+        try:
+            return self.page.evaluate("""
+                () => {
+                    const sels = ['.adm-dialog','.adm-popup','.adm-modal',
+                                  '[role=dialog]','.ant-modal','.el-dialog',
+                                  '.modal','.dialog','.popup'];
+                    const found = [];
+                    for (const s of sels) {
+                        const els = document.querySelectorAll(s);
+                        if (els.length) {
+                            els.forEach((e, i) => {
+                                const visible = e.offsetParent !== null;
+                                const btns = Array.from(e.querySelectorAll('button, [role=button], .adm-button'))
+                                    .map(b => '['+(b.className||'').slice(0,80)+']'+(b.innerText||'').trim().slice(0,20));
+                                found.push(`${s}#${i}(visible=${visible}, btns=${btns.length>0?btns.join('|'):'none'})`);
+                            });
+                        }
+                    }
+                    return found.length ? found.join(' ; ') : '(页面无 dialog/modal/popup 节点)';
+                }
+            """)
+        except Exception as e:
+            return f"(DOM 调试失败: {e})"
 
     def _do_click_until(self, a):
         """点击 target，等 value 描述的元素出现；若超时则重试点击。
@@ -365,13 +416,9 @@ class ActionExecutor:
     def _do_wait_for(self, a):
         """等待元素到达指定状态。
 
-        与其他动作不同，wait_for 的语义本身就是"现在没有，等它出现"，
-        因此不能像 click/fill 那样要求 smart_find 在调用时就立刻命中。
-        策略：
-          1. 用 build_candidates 拿到候选 locator 列表（**不做存在性校验**）
-          2. 顺序对每个候选调用 Playwright Locator.wait_for(state, timeout)
-          3. 任意一个等到即成功；全部超时才报错
-          4. 平均分摊总超时，避免单个候选占满
+        策略：把所有候选 locator 通过 Locator.or_() 合并成一个"任意命中"的
+        复合 locator，一次性等待 self.timeout，而不是串行轮询每个候选。
+        这样候选数量再多，总等待时间也只是 self.timeout，且任何一个候选先命中就成功。
         """
         state = a.get("value") or "visible"
         target = a["target"]
@@ -379,20 +426,33 @@ class ActionExecutor:
         if not candidates:
             raise LookupError(f"未能为「{target}」生成等待候选定位器")
 
-        # 平均分摊（最少 1.5s，最多 self.timeout）
-        per = max(1500, int(self.timeout / max(1, len(candidates))))
-        last_err = None
-        for c in candidates:
+        # 用 Locator.or_ 合并所有候选为单个并行 locator
+        merged = candidates[0]
+        for c in candidates[1:]:
             try:
-                c.first.wait_for(state=state, timeout=per)
-                return True, f"{target} 已 {state}"
-            except Exception as e:
-                last_err = e
+                merged = merged.or_(c)
+            except Exception:
+                # or_ 在极少数 selector 类型上可能不支持，跳过
                 continue
-        raise TimeoutError(
-            f"等待「{target}」{state} 超时（已尝试 {len(candidates)} 个候选定位器）。"
-            f"最后错误：{last_err}"
-        )
+
+        try:
+            merged.first.wait_for(state=state, timeout=self.timeout)
+            return True, f"{target} 已 {state}"
+        except Exception as e:
+            # 兜底：合并失败时再走串行（保持向后兼容）
+            per = max(1500, int(self.timeout / max(1, len(candidates))))
+            last_err = e
+            for c in candidates:
+                try:
+                    c.first.wait_for(state=state, timeout=per)
+                    return True, f"{target} 已 {state}"
+                except Exception as e2:
+                    last_err = e2
+                    continue
+            raise TimeoutError(
+                f"等待「{target}」{state} 超时（已尝试 {len(candidates)} 个候选定位器）。"
+                f"最后错误：{last_err}"
+            )
 
     # ===================== 滚动 / 截图 =====================
     def _do_scroll_to(self, a):

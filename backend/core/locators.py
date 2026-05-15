@@ -213,6 +213,22 @@ class ElementLocator:
                 self.by_test_id(target),
             ])
 
+        # 5. 兜底（专为 wait_for 等"等出现"场景）：部分文本匹配 + :has-text CSS
+        # 现实业务里「工程总造价」往往作为「工程总造价：12345」这种带后缀的文本出现，
+        # 精确匹配命不中，此处追加宽松候选，仅在前面所有精确候选都未命中时才会被使用。
+        if target:
+            try:
+                # 部分匹配（exact=False，等价于子串包含）
+                candidates.append(self.by_text(target, exact=False))
+            except Exception:
+                pass
+            try:
+                # CSS :has-text 兜底，覆盖元素 textContent 含目标文本的所有节点
+                safe = target.replace("\\", "\\\\").replace('"', '\\"')
+                candidates.append(self.by_css(f':has-text("{safe}")'))
+            except Exception:
+                pass
+
         return candidates, desc
 
     # ========== 智能查找（仅精确匹配） ==========

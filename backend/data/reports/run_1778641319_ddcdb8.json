@@ -1,0 +1,649 @@
+{
+  "id": "run_1778641319_ddcdb8",
+  "scope": "case",
+  "target_name": "登录",
+  "status": "cancelled",
+  "logs": [
+    {
+      "ts": 1778641320292,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1778641320396,
+      "level": "info",
+      "msg": "-- 用例：登录 --"
+    },
+    {
+      "ts": 1778641323402,
+      "level": "info",
+      "msg": "前置：已打开 https://jmyz-test.jdtest.net/main"
+    },
+    {
+      "ts": 1778641323513,
+      "level": "info",
+      "msg": "步骤 1: 点击“密码登录” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641323513,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '密码登录', 'value': None}"
+    },
+    {
+      "ts": 1778641323719,
+      "level": "info",
+      "msg": "  -> 已点击 密码登录"
+    },
+    {
+      "ts": 1778641325754,
+      "level": "info",
+      "msg": "步骤 2: 点击“账号”输入框，输入8040094 | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641325755,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '账号 输入框', 'value': '8040094'}"
+    },
+    {
+      "ts": 1778641325881,
+      "level": "info",
+      "msg": "  -> 在 账号 输入框 输入了「8040094」"
+    },
+    {
+      "ts": 1778641327921,
+      "level": "info",
+      "msg": "步骤 3: 点击“密码”输入框，输入SDLCOSO2.0shj | 预期: 输入成功"
+    },
+    {
+      "ts": 1778641327921,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'fill', 'target': '密码 输入框', 'value': 'SDLCOSO2.0shj'}"
+    },
+    {
+      "ts": 1778641328021,
+      "level": "info",
+      "msg": "  -> 在 密码 输入框 输入了「SDLCOSO2.0shj」"
+    },
+    {
+      "ts": 1778641330070,
+      "level": "info",
+      "msg": "步骤 4: 点击“登录”按钮 | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641330070,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '登录 按钮', 'value': None}"
+    },
+    {
+      "ts": 1778641330191,
+      "level": "info",
+      "msg": "  -> 已点击 登录 按钮"
+    },
+    {
+      "ts": 1778641332236,
+      "level": "info",
+      "msg": "步骤 5: 等待“在线销售”出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778641332236,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '在线销售', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778641347403,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n"
+    },
+    {
+      "ts": 1778641347495,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step5_20260513_110227.png"
+    },
+    {
+      "ts": 1778641349536,
+      "level": "info",
+      "msg": "步骤 6: 点击“在线销售” | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641349536,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': '在线销售', 'value': None}"
+    },
+    {
+      "ts": 1778641349636,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「在线销售」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778641349724,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step6_20260513_110229.png"
+    },
+    {
+      "ts": 1778641351771,
+      "level": "info",
+      "msg": "步骤 7: 等待”关于我们“出现 | 预期: 页面出现“在线销售”"
+    },
+    {
+      "ts": 1778641351771,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '关于我们', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778641366918,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"关于我们\").first to be visible\n"
+    },
+    {
+      "ts": 1778641367003,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step7_20260513_110246.png"
+    },
+    {
+      "ts": 1778641369053,
+      "level": "info",
+      "msg": "步骤 8: 点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img | 预期: 点击成功"
+    },
+    {
+      "ts": 1778641369053,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'click', 'target': 'css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img', 'value': None}"
+    },
+    {
+      "ts": 1778641369119,
+      "level": "error",
+      "msg": "  -> click 执行失败: 未找到精确匹配的元素：「css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。"
+    },
+    {
+      "ts": 1778641369208,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step8_20260513_110249.png"
+    },
+    {
+      "ts": 1778641371252,
+      "level": "info",
+      "msg": "步骤 9: 等待”选择商机“出现 | 预期: 页面出现”选择商机“弹窗"
+    },
+    {
+      "ts": 1778641371252,
+      "level": "debug",
+      "msg": "解析(keyword)：{'action': 'wait_for', 'target': '选择商机', 'value': 'visible'}"
+    },
+    {
+      "ts": 1778641386406,
+      "level": "error",
+      "msg": "  -> wait_for 执行失败: 等待「选择商机」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"选择商机\").first to be visible\n"
+    },
+    {
+      "ts": 1778641386496,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_登录_step9_20260513_110306.png"
+    },
+    {
+      "ts": 1778641387107,
+      "level": "warn",
+      "msg": "⏹ 用户请求停止，将在当前步骤完成后中断"
+    },
+    {
+      "ts": 1778641388536,
+      "level": "warn",
+      "msg": "⏹ 已收到停止信号，跳过步骤 10 及之后"
+    }
+  ],
+  "summary": {
+    "case_id": "case_8e66ef7b00",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 69600,
+    "case": {
+      "id": "case_8e66ef7b00",
+      "name": "登录",
+      "precondition": "",
+      "status": "fail",
+      "steps": [
+        {
+          "id": "step_54f0cd2f20",
+          "description": "点击“密码登录”",
+          "expected": "点击成功",
+          "actual": "已点击 密码登录",
+          "status": "pass"
+        },
+        {
+          "id": "step_b99c7d3369",
+          "description": "点击“账号”输入框，输入8040094",
+          "expected": "输入成功",
+          "actual": "在 账号 输入框 输入了「8040094」",
+          "status": "pass"
+        },
+        {
+          "id": "step_42d3a26a4e",
+          "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+          "expected": "输入成功",
+          "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+          "status": "pass"
+        },
+        {
+          "id": "step_a07fcda327",
+          "description": "点击“登录”按钮",
+          "expected": "点击成功",
+          "actual": "已点击 登录 按钮",
+          "status": "pass"
+        },
+        {
+          "id": "step_1b87bc9c59",
+          "description": "等待“在线销售”出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_5b36d63b53",
+          "description": "点击“在线销售”",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「在线销售」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_7b5349cceb",
+          "description": "等待”关于我们“出现",
+          "expected": "页面出现“在线销售”",
+          "actual": "wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"关于我们\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_9be412b929",
+          "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+          "expected": "点击成功",
+          "actual": "click 执行失败: 未找到精确匹配的元素：「css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+          "status": "fail"
+        },
+        {
+          "id": "step_bddbe3021b",
+          "description": "等待”选择商机“出现",
+          "expected": "页面出现”选择商机“弹窗",
+          "actual": "wait_for 执行失败: 等待「选择商机」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"选择商机\").first to be visible\n",
+          "status": "fail"
+        },
+        {
+          "id": "step_0766488773",
+          "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+          "expected": "输入成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_6983acb226",
+          "description": "点击 搜索 按钮",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_43a12c2221",
+          "description": "等待 SHJ成都分公司 出现",
+          "expected": "页面出现“SHJ成都分公司 的比伯”",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_cc886958bf",
+          "description": "滚动到 text=SHJ成都分公司",
+          "expected": "出现SHJ成都分公司",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_f37a55cd03",
+          "description": "点击 新增接待 在 SHJ成都分公司 的 卡片",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_e73e3b4a67",
+          "description": "点击 开始接待 按钮",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_61bc38d7e3",
+          "description": "点击 在线商城",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_f8c230baff",
+          "description": "点击搜索框，输入 轻奢装3.0-加锁",
+          "expected": "输入成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_c9aa7759e8",
+          "description": "点击 搜索 按钮",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_01fcd9713a",
+          "description": "点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_e4418d0a30",
+          "description": "点击 报价类型 下拉框",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_5846383fef",
+          "description": "点击 预算",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_342c90ff16",
+          "description": "点击 报价面积 输入框，输入110",
+          "expected": "输入成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_19ba8291ca",
+          "description": "点击 卧室个数 输入框，输入1",
+          "expected": "输入成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_6053b4ec30",
+          "description": "点击 卫生间个数 输入框，输入1",
+          "expected": "输入成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_778d0dc765",
+          "description": "点击 卫生间 下拉框",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_ed334ec235",
+          "description": "点击 普配",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_b7048dd0f9",
+          "description": "点击 价格明细",
+          "expected": "点击成功",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_573e33695f",
+          "description": "休眠10秒",
+          "expected": "",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_ca10f99dd4",
+          "description": "等待出现 工程总造价",
+          "expected": "等待出现 工程总造价",
+          "actual": "已取消",
+          "status": "skipped"
+        },
+        {
+          "id": "step_e50d39f200",
+          "description": "截图",
+          "expected": "截图成功",
+          "actual": "已取消",
+          "status": "skipped"
+        }
+      ]
+    },
+    "suite": {
+      "id": "suite_ea8b897c67",
+      "name": "下单（整装）",
+      "base_url": "https://jmyz-test.jdtest.net/main",
+      "description": "",
+      "tags": [
+        "login"
+      ],
+      "cases": [
+        {
+          "id": "case_8e66ef7b00",
+          "name": "登录",
+          "precondition": "",
+          "status": "fail",
+          "steps": [
+            {
+              "id": "step_54f0cd2f20",
+              "description": "点击“密码登录”",
+              "expected": "点击成功",
+              "actual": "已点击 密码登录",
+              "status": "pass"
+            },
+            {
+              "id": "step_b99c7d3369",
+              "description": "点击“账号”输入框，输入8040094",
+              "expected": "输入成功",
+              "actual": "在 账号 输入框 输入了「8040094」",
+              "status": "pass"
+            },
+            {
+              "id": "step_42d3a26a4e",
+              "description": "点击“密码”输入框，输入SDLCOSO2.0shj",
+              "expected": "输入成功",
+              "actual": "在 密码 输入框 输入了「SDLCOSO2.0shj」",
+              "status": "pass"
+            },
+            {
+              "id": "step_a07fcda327",
+              "description": "点击“登录”按钮",
+              "expected": "点击成功",
+              "actual": "已点击 登录 按钮",
+              "status": "pass"
+            },
+            {
+              "id": "step_1b87bc9c59",
+              "description": "等待“在线销售”出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "wait_for 执行失败: 等待「在线销售」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"在线销售\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_5b36d63b53",
+              "description": "点击“在线销售”",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「在线销售」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_7b5349cceb",
+              "description": "等待”关于我们“出现",
+              "expected": "页面出现“在线销售”",
+              "actual": "wait_for 执行失败: 等待「关于我们」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"关于我们\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_9be412b929",
+              "description": "点击 css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img",
+              "expected": "点击成功",
+              "actual": "click 执行失败: 未找到精确匹配的元素：「css=#root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > img」。请检查名称是否准确，或使用 css=/xpath=/role=/text= 等前缀显式定位。",
+              "status": "fail"
+            },
+            {
+              "id": "step_bddbe3021b",
+              "description": "等待”选择商机“出现",
+              "expected": "页面出现”选择商机“弹窗",
+              "actual": "wait_for 执行失败: 等待「选择商机」visible 超时（已尝试 10 个候选定位器）。最后错误：Locator.wait_for: Timeout 1500ms exceeded.\nCall log:\n  - waiting for get_by_test_id(\"选择商机\").first to be visible\n",
+              "status": "fail"
+            },
+            {
+              "id": "step_0766488773",
+              "description": "点击 placeholder=请输入商机ID、客户姓名或客户电话,输入 比伯",
+              "expected": "输入成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_6983acb226",
+              "description": "点击 搜索 按钮",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_43a12c2221",
+              "description": "等待 SHJ成都分公司 出现",
+              "expected": "页面出现“SHJ成都分公司 的比伯”",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_cc886958bf",
+              "description": "滚动到 text=SHJ成都分公司",
+              "expected": "出现SHJ成都分公司",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_f37a55cd03",
+              "description": "点击 新增接待 在 SHJ成都分公司 的 卡片",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_e73e3b4a67",
+              "description": "点击 开始接待 按钮",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_61bc38d7e3",
+              "description": "点击 在线商城",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_f8c230baff",
+              "description": "点击搜索框，输入 轻奢装3.0-加锁",
+              "expected": "输入成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_c9aa7759e8",
+              "description": "点击 搜索 按钮",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_01fcd9713a",
+              "description": "点击 css=*:has-text(\"轻奢装3.0-加锁\") img[class*=\"buyIcon\"]",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_e4418d0a30",
+              "description": "点击 报价类型 下拉框",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_5846383fef",
+              "description": "点击 预算",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_342c90ff16",
+              "description": "点击 报价面积 输入框，输入110",
+              "expected": "输入成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_19ba8291ca",
+              "description": "点击 卧室个数 输入框，输入1",
+              "expected": "输入成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_6053b4ec30",
+              "description": "点击 卫生间个数 输入框，输入1",
+              "expected": "输入成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_778d0dc765",
+              "description": "点击 卫生间 下拉框",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_ed334ec235",
+              "description": "点击 普配",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_b7048dd0f9",
+              "description": "点击 价格明细",
+              "expected": "点击成功",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_573e33695f",
+              "description": "休眠10秒",
+              "expected": "",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_ca10f99dd4",
+              "description": "等待出现 工程总造价",
+              "expected": "等待出现 工程总造价",
+              "actual": "已取消",
+              "status": "skipped"
+            },
+            {
+              "id": "step_e50d39f200",
+              "description": "截图",
+              "expected": "截图成功",
+              "actual": "已取消",
+              "status": "skipped"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1778641319078,
+  "finished_at": 1778641388679
+}
