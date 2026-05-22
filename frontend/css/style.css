@@ -326,11 +326,24 @@ body {
   margin-bottom: 10px;
 }
 .case-head { display: flex; gap: 8px; align-items: center; }
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.toggle-label input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--primary);
+}
 .case-name-input { flex: 1; }
 .step-table { margin-top: 8px; }
 .step-head, .step-row {
   display: grid;
-  grid-template-columns: 40px 1fr 1fr 30px;
+  grid-template-columns: 40px 1fr 1fr 1fr 30px;
   gap: 6px;
   align-items: center;
   margin-bottom: 4px;

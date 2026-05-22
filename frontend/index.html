@@ -201,12 +201,16 @@
     <div class="case-block" data-case>
       <div class="case-head">
         <input type="text" data-case-name placeholder="用例名称" class="case-name-input">
+        <label class="toggle-label">
+          <input type="checkbox" data-case-use-desc2>
+          <span>启用步骤描述</span>
+        </label>
         <button class="btn-icon" data-case-del title="删除用例">🗑</button>
       </div>
       <input type="text" data-case-pre placeholder="前置条件（可选）">
       <div class="step-table">
         <div class="step-head">
-          <span>#</span><span>执行步骤（自然语言）</span><span>预期结果</span><span></span>
+          <span>#</span><span>执行步骤（自然语言）</span><span>预期结果</span><span class="col-desc2">步骤描述</span><span></span>
         </div>
         <div data-steps></div>
         <button class="btn small" data-step-add>+ 添加步骤</button>
@@ -219,6 +223,7 @@
       <span class="step-idx" data-step-idx>1</span>
       <input type="text" data-step-desc placeholder="如：在 搜索框 输入 Playwright">
       <input type="text" data-step-exp placeholder="预期结果">
+      <input type="text" data-step-desc2 class="step-desc2-input" placeholder="步骤描述（可选，用于测试报告参数传递）">
       <button class="btn-icon" data-step-del>×</button>
     </div>
   </template>

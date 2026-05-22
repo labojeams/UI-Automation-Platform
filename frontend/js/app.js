@@ -345,12 +345,29 @@ function buildCaseBlock(c = {}) {
   root.dataset.caseId = c.id || "";
   root.querySelector("[data-case-name]").value = c.name || "";
   root.querySelector("[data-case-pre]").value = c.precondition || "";
+  
+  const useDesc2 = root.querySelector("[data-case-use-desc2]");
   const stepsBox = root.querySelector("[data-steps]");
   (c.steps && c.steps.length ? c.steps : [{}]).forEach(st => stepsBox.appendChild(buildStepRow(st)));
 
+  const toggleDesc2 = (checked) => {
+    root.querySelectorAll(".col-desc2, .step-desc2-input").forEach(el => {
+      el.style.display = checked ? "" : "none";
+    });
+  };
+  
+  useDesc2.checked = !!c.use_desc2;
+  toggleDesc2(useDesc2.checked);
+  
+  useDesc2.addEventListener("change", (e) => toggleDesc2(e.target.checked));
   root.querySelector("[data-case-del]").addEventListener("click", () => root.remove());
   root.querySelector("[data-step-add]").addEventListener("click", () => {
-    stepsBox.appendChild(buildStepRow());
+    const newRow = buildStepRow();
+    stepsBox.appendChild(newRow);
+    if (!useDesc2.checked) {
+      const desc2Input = newRow.querySelector(".step-desc2-input");
+      if (desc2Input) desc2Input.style.display = "none";
+    }
     renumber(root);
   });
   renumber(root);
@@ -363,6 +380,7 @@ function buildStepRow(st = {}) {
   row.dataset.stepId = st.id || "";
   row.querySelector("[data-step-desc]").value = st.description || "";
   row.querySelector("[data-step-exp]").value = st.expected || "";
+  row.querySelector("[data-step-desc2]").value = st.desc2 || "";
   row.querySelector("[data-step-del]").addEventListener("click", () => {
     const parent = row.closest("[data-case]");
     row.remove();
@@ -386,11 +404,13 @@ function collectSuiteFromModal() {
     id: block.dataset.caseId || undefined,
     name: block.querySelector("[data-case-name]").value.trim() || "未命名用例",
     precondition: block.querySelector("[data-case-pre]").value.trim(),
+    use_desc2: block.querySelector("[data-case-use-desc2]").checked,
     steps: $$("[data-step]", block).map(row => ({
-      id: row.dataset.stepId || undefined,
-      description: row.querySelector("[data-step-desc]").value.trim(),
-      expected: row.querySelector("[data-step-exp]").value.trim(),
-    })).filter(st => st.description),
+        id: row.dataset.stepId || undefined,
+        description: row.querySelector("[data-step-desc]").value.trim(),
+        expected: row.querySelector("[data-step-exp]").value.trim(),
+        desc2: row.querySelector("[data-step-desc2]").value.trim(),
+      })).filter(st => st.description),
   }));
   return {
     id,
