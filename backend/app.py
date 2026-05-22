@@ -256,6 +256,34 @@ def api_parse():
     return jsonify({"action": action, "source": source})
 
 
+@app.route("/api/optimize", methods=["POST"])
+def api_optimize():
+    try:
+        payload = request.get_json(force=True) or {}
+        sentence = payload.get("sentence", "")
+        if not sentence:
+            return jsonify({"error": "缺少句子参数"}), 400
+        
+        action = parse_step(sentence)
+        if action:
+            return jsonify({"optimized": sentence, "source": "already_valid"})
+        
+        cfg = storage.load_config()
+        llm = LLMParser(cfg["llm"])
+        if not llm.is_enabled():
+            return jsonify({"error": "LLM 未配置，请先在设置中配置 API Key 并启用 LLM 兜底"}), 400
+        
+        optimized = llm.optimize(sentence)
+        if optimized:
+            return jsonify({"optimized": optimized, "source": "llm"})
+        return jsonify({"error": "LLM 返回空结果"}), 500
+    except Exception as e:
+        import traceback
+        print(f"[ERROR] /api/optimize 异常: {e}")
+        print(traceback.format_exc())
+        return jsonify({"error": f"服务器错误: {str(e)}"}), 500
+
+
 @app.route("/api/keywords", methods=["GET"])
 def api_keywords():
     return jsonify({"help": get_keyword_help()})

@@ -381,6 +381,39 @@ function buildStepRow(st = {}) {
   row.querySelector("[data-step-desc]").value = st.description || "";
   row.querySelector("[data-step-exp]").value = st.expected || "";
   row.querySelector("[data-step-desc2]").value = st.desc2 || "";
+  
+  const descInput = row.querySelector("[data-step-desc]");
+  const optimizeBtn = row.querySelector(".btn-ai-optimize");
+  
+  optimizeBtn.addEventListener("click", async () => {
+    const originalText = descInput.value.trim();
+    if (!originalText) {
+      alert("请先输入测试步骤");
+      return;
+    }
+    optimizeBtn.disabled = true;
+    optimizeBtn.textContent = "优化中...";
+    try {
+      const r = await api("/api/optimize", {
+        method: "POST",
+        body: JSON.stringify({ sentence: originalText }),
+      });
+      if (r && r.optimized) {
+        descInput.value = r.optimized;
+        if (r.source === "already_valid") {
+          alert("该步骤描述已经是正确格式");
+        } else {
+          alert("优化完成！");
+        }
+      }
+    } catch (e) {
+      alert("优化失败：" + e.message);
+    } finally {
+      optimizeBtn.disabled = false;
+      optimizeBtn.textContent = "✨ AI优化";
+    }
+  });
+  
   row.querySelector("[data-step-del]").addEventListener("click", () => {
     const parent = row.closest("[data-case]");
     row.remove();

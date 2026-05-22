@@ -343,7 +343,7 @@ body {
 .step-table { margin-top: 8px; }
 .step-head, .step-row {
   display: grid;
-  grid-template-columns: 40px 1fr 1fr 1fr 30px;
+  grid-template-columns: 40px 1.2fr 1fr 1fr 30px;
   gap: 6px;
   align-items: center;
   margin-bottom: 4px;
@@ -351,6 +351,44 @@ body {
 .step-head span { color: var(--text-dim); font-size: 11px; }
 .step-row input { width: 100%; }
 .step-idx { color: var(--text-dim); text-align: center; }
+
+.step-desc-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.step-desc-wrapper input {
+  flex: 1;
+  padding-right: 65px;
+}
+.btn-ai-optimize {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.step-desc-wrapper:hover .btn-ai-optimize,
+.step-desc-wrapper input:focus + .btn-ai-optimize {
+  opacity: 1;
+}
+.btn-ai-optimize:hover {
+  filter: brightness(1.15);
+}
+.btn-ai-optimize:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 .empty-tip {
   text-align: center;

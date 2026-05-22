@@ -1,0 +1,144 @@
+{
+  "id": "run_1779444985_d37e70",
+  "scope": "case",
+  "target_name": "搜索",
+  "status": "done",
+  "logs": [
+    {
+      "ts": 1779444986064,
+      "level": "info",
+      "msg": "🎥 浏览器画面嵌入已启用（每步截帧推送）"
+    },
+    {
+      "ts": 1779444986127,
+      "level": "info",
+      "msg": "-- 用例：搜索 --"
+    },
+    {
+      "ts": 1779444987804,
+      "level": "info",
+      "msg": "前置：已打开 https://www.baidu.com/"
+    },
+    {
+      "ts": 1779444988074,
+      "level": "info",
+      "msg": "步骤 1: 在输入框内输入豆包 | 预期: 成功输入"
+    },
+    {
+      "ts": 1779444988655,
+      "level": "error",
+      "msg": "无法解析该步骤（关键词与LLM均未识别）"
+    },
+    {
+      "ts": 1779444989080,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索_step1_20260522_181628.png"
+    },
+    {
+      "ts": 1779444989339,
+      "level": "info",
+      "msg": "步骤 2: 点击百度一下 | 预期: 点击成功"
+    },
+    {
+      "ts": 1779444989936,
+      "level": "error",
+      "msg": "无法解析该步骤（关键词与LLM均未识别）"
+    },
+    {
+      "ts": 1779444990353,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索_step2_20260522_181629.png"
+    },
+    {
+      "ts": 1779444990642,
+      "level": "info",
+      "msg": "步骤 3: 点击豆包 | 预期: 点击成功"
+    },
+    {
+      "ts": 1779444991336,
+      "level": "error",
+      "msg": "无法解析该步骤（关键词与LLM均未识别）"
+    },
+    {
+      "ts": 1779444991678,
+      "level": "warn",
+      "msg": "已保存失败截图：FAIL_搜索_step3_20260522_181631.png"
+    }
+  ],
+  "summary": {
+    "case_id": "case_d11cec55fb",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "duration_ms": 6950,
+    "case": {
+      "id": "case_d11cec55fb",
+      "name": "搜索",
+      "precondition": "",
+      "status": "fail",
+      "steps": [
+        {
+          "id": "step_96f639a8fe",
+          "description": "在输入框内输入豆包",
+          "expected": "成功输入",
+          "actual": "无法解析该步骤（关键词与LLM均未识别）",
+          "status": "fail"
+        },
+        {
+          "id": "step_ca0a303fdb",
+          "description": "点击百度一下",
+          "expected": "点击成功",
+          "actual": "无法解析该步骤（关键词与LLM均未识别）",
+          "status": "fail"
+        },
+        {
+          "id": "step_fc9c57596e",
+          "description": "点击豆包",
+          "expected": "点击成功",
+          "actual": "无法解析该步骤（关键词与LLM均未识别）",
+          "status": "fail"
+        }
+      ]
+    },
+    "suite": {
+      "id": "suite_027d284e2a",
+      "name": "试用demo",
+      "base_url": "https://www.baidu.com/",
+      "description": "使用版本",
+      "tags": [],
+      "cases": [
+        {
+          "id": "case_d11cec55fb",
+          "name": "搜索",
+          "precondition": "",
+          "status": "fail",
+          "steps": [
+            {
+              "id": "step_96f639a8fe",
+              "description": "在输入框内输入豆包",
+              "expected": "成功输入",
+              "actual": "无法解析该步骤（关键词与LLM均未识别）",
+              "status": "fail"
+            },
+            {
+              "id": "step_ca0a303fdb",
+              "description": "点击百度一下",
+              "expected": "点击成功",
+              "actual": "无法解析该步骤（关键词与LLM均未识别）",
+              "status": "fail"
+            },
+            {
+              "id": "step_fc9c57596e",
+              "description": "点击豆包",
+              "expected": "点击成功",
+              "actual": "无法解析该步骤（关键词与LLM均未识别）",
+              "status": "fail"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "started_at": 1779444985230,
+  "finished_at": 1779444992180
+}

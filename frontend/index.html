@@ -221,7 +221,10 @@
   <template id="tpl-step">
     <div class="step-row" data-step>
       <span class="step-idx" data-step-idx>1</span>
-      <input type="text" data-step-desc placeholder="如：在 搜索框 输入 Playwright">
+      <div class="step-desc-wrapper">
+        <input type="text" data-step-desc placeholder="如：在 搜索框 输入 Playwright">
+        <button class="btn-ai-optimize" title="AI 一键优化" type="button">✨ AI优化</button>
+      </div>
       <input type="text" data-step-exp placeholder="预期结果">
       <input type="text" data-step-desc2 class="step-desc2-input" placeholder="步骤描述（可选，用于测试报告参数传递）">
       <button class="btn-icon" data-step-del>×</button>
